@@ -1,0 +1,68 @@
+---
+title: "Clase_introductoria_quarto_articulo"
+author: "Haly-en"
+date: "2023-01-19"
+categories: [Quarto_articulo]
+---
+
+# ¿Qué es quarto?
+
+Quarto® es un sistema de publicación científica y técnica de código abierto basado en Pandoc
+Puede entretejer texto narrativo y código para producir resultados con un formato elegante como documentos, páginas web, publicaciones de [BLOG_QMD](https://ivelasq.quarto.pub/building-a-blog-with-quarto/workflow/write-docs/), libros y más.
+
+Quarto es la próxima generación de RMarkdown para publicación, que incluye documentos dinámicos y estáticos y compatibilidad con lenguajes de programación multilingües (Python, R, bash).
+
+# ¿Qué vamos a aprender aquí?
+En este post encontrarás todo lo relacionado a la construcción de un artículo tipo plos con Quarto.
+
+::: {.panel-tabset}
+## Instalación
+
+Aquí los links para instalar los programas
+
+::: panel-tabset
+## Quarto
+
+Install latest version of Quarto (v1.0.36 or greater)
+
+[Quarto](https://quarto.org/docs/get-started/)
+
+
+## Rstudio
+Descargar Rstudio si va a trabajar desde ahí. Se puede utilizar la terminal, VS-code.
+```
+ [Rstudio](https://posit.co/download/rstudio-desktop/#download)
+```
+
+## R
+
+Idealmente actualizar/usar a R 4.1 or R 4.2
+
+:::
+
+## Template plos
+
+Utilizar template de plos_journal
+[git_plos](https://github.com/quarto-journals/plos/blob/main/README.md)
+
+    quarto use template quarto-journals/plos
+
+    quarto render article.qmd 
+:::
+
+
+
+Una vez que instalas o usas el template, se generan archivos necesarios para utilizar el template. 
+
+Para empezar, en el archivo *.qmd* ahí se va a guardar el texto de tu articulo, junto con un pequeño código de configuración al principio 
+```
+
+
+````
+
+:::{.callout-note}
+Note that there are five types of callouts, including: 
+`note`, `tip`, `warning`, `caution`, and `important`.
+:::
+
+

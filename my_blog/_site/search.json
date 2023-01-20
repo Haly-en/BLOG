@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "posts/Clase_intro/index.html",
+    "href": "posts/Clase_intro/index.html",
+    "title": "Clase_introductoria_quarto_articulo",
+    "section": "",
+    "text": "¿Qué es quarto?\nQuarto® es un sistema de publicación científica y técnica de código abierto basado en Pandoc Puede entretejer texto narrativo y código para producir resultados con un formato elegante como documentos, páginas web, publicaciones de BLOG_QMD, libros y más.\n\n\n¿Qué vamos a aprender aquí?\nEn este post encontrarás todo lo relacionado a la construcción de un artículo tipo plos con Quarto.\n\nInstalaciónTemplate plos\n\n\nAquí los links para instalar los programas\n\nQuartoRstudioR\n\n\nInstall latest version of Quarto (v1.0.36 or greater)\nQuarto\n\n\nDescargar Rstudio si va a trabajar desde ahí. Se puede utilizar la terminal, VS-code.\n [Rstudio](https://posit.co/download/rstudio-desktop/#download)\n\n\nIdealmente actualizar/usar a R 4.1 or R 4.2\n\n\n\n\n\nUtilizar template de plos_journal git_plos\nquarto use template quarto-journals/plos\n\nquarto render article.qmd"
+  },
+  {
+    "objectID": "posts/paginas_utiles_Quarto/index.html",
+    "href": "posts/paginas_utiles_Quarto/index.html",
+    "title": "Páginas útiles",
+    "section": "",
+    "text": "Aquí un link para hacer un BLOG_QMD"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Mi blog",
+    "section": "",
+    "text": "PhD,student. Molecular and microbiology. Particularly in area of Bioinformatics stuff. Working on promoters on bacterial genomes I love coffee and art. I´am Gatolic person\nAquí anoto commandos útiles y texto importante para un proyecto."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "BLog",
+    "section": "",
+    "text": "Páginas útiles\n\n\n\nQuarto\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\nHarlow Malloc\n\n\nJan 19, 2023\n\n\n\n\n\n\n\n\n\n\n \n\n\n\nClase_introductoria_quarto_articulo\n\n\n\nQuarto_articulo\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 19, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\nTristan O’Malley\n\n\nJan 16, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+  }
+]

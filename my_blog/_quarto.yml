@@ -1,0 +1,22 @@
+project:
+  type: website
+
+website:
+  title: "Notas"
+  navbar:
+    right:
+      - about.qmd
+      - blog.qmd
+      - icon: github
+        href: https://github.com/Haly-en
+      - icon: twitter
+        href: https://twitter.com/HalyHalymary
+format:
+  html:
+    theme: sky
+    dark: darkly
+    css: styles.css
+    highlight-style: espresso #espresso, zenburn, eiffel
+
+
+

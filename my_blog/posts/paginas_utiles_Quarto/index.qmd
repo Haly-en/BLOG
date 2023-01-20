@@ -1,0 +1,9 @@
+---
+title: "Páginas útiles"
+author: "Haly-en"
+date: "2023-01-20"
+categories: [Quarto]
+---
+
+
+- Aquí un link para hacer un [BLOG_QMD](https://ivelasq.quarto.pub/building-a-blog-with-quarto/workflow/write-docs/)
