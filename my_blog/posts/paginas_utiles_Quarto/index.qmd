@@ -2,8 +2,25 @@
 title: "Páginas útiles"
 author: "Haly-en"
 date: "2023-01-20"
+draft: true
 categories: [Quarto]
 ---
 
+# Blogs interesantes
+* Isabela Velasquez
 
 - Aquí un link para hacer un [BLOG_QMD](https://ivelasq.quarto.pub/building-a-blog-with-quarto/workflow/write-docs/)
+
+# Comandos especiales
+
+- utf8_print("\u03C3")
+```
+"σ"
+
+μ <- abs(digamma(1))
+μseq <- seq(μ,3*μ,μ)
+dev.new()
+plot(μseq, ylab = "Diameter of apeture ( μ m)",
+  , xlab = "Force spaces with ~ μ  \u03C0  \u03C3  \u03C0 ",
+  , main = "This is another Greek character with space \u03C3")
+```

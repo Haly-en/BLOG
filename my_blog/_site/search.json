@@ -2,23 +2,16 @@
   {
     "objectID": "posts/post-with-code/index.html",
     "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "title": "Para presentaciones con Quarto",
     "section": "",
-    "text": "This is a post with executable code."
+    "text": "Para texto al centro"
   },
   {
-    "objectID": "posts/Clase_intro/index.html",
-    "href": "posts/Clase_intro/index.html",
-    "title": "Clase_introductoria_quarto_articulo",
+    "objectID": "posts/post-with-code/index.html#section",
+    "href": "posts/post-with-code/index.html#section",
+    "title": "Para presentaciones con Quarto",
     "section": "",
-    "text": "¿Qué es quarto?\nQuarto® es un sistema de publicación científica y técnica de código abierto basado en Pandoc Puede entretejer texto narrativo y código para producir resultados con un formato elegante como documentos, páginas web, publicaciones de BLOG_QMD, libros y más.\n\n\n¿Qué vamos a aprender aquí?\nEn este post encontrarás todo lo relacionado a la construcción de un artículo tipo plos con Quarto.\n\nInstalaciónTemplate plos\n\n\nAquí los links para instalar los programas\n\nQuartoRstudioR\n\n\nInstall latest version of Quarto (v1.0.36 or greater)\nQuarto\n\n\nDescargar Rstudio si va a trabajar desde ahí. Se puede utilizar la terminal, VS-code.\n [Rstudio](https://posit.co/download/rstudio-desktop/#download)\n\n\nIdealmente actualizar/usar a R 4.1 or R 4.2\n\n\n\n\n\nUtilizar template de plos_journal git_plos\nquarto use template quarto-journals/plos\n\nquarto render article.qmd"
-  },
-  {
-    "objectID": "posts/paginas_utiles_Quarto/index.html",
-    "href": "posts/paginas_utiles_Quarto/index.html",
-    "title": "Páginas útiles",
-    "section": "",
-    "text": "Aquí un link para hacer un BLOG_QMD"
+    "text": "This is a post with executable code.\n\n\nEase of Use VS Full Details\n\n\nPara poner un timer en la diapositiva \n\n::: {.cell}\n\n:::\n\n\n::: {.cell}\n::: {.cell-output-display}\n```{=html}\n<div class=\"countdown\" id=\"timer_dcd08242\" data-update-every=\"1\" data-play-sound=\"true\" tabindex=\"0\" style=\"right:0;bottom:0;font-size:2em;\">\n<div class=\"countdown-controls\"><button class=\"countdown-bump-down\">&minus;</button><button class=\"countdown-bump-up\">&plus;</button></div>\n<code class=\"countdown-time\"><span class=\"countdown-digits minutes\">01</span><span class=\"countdown-digits colon\">:</span><span class=\"countdown-digits seconds\">00</span></code>\n</div>\n::: :::"
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -30,15 +23,29 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Mi blog",
+    "title": "☂️ About me",
     "section": "",
-    "text": "PhD,student. Molecular and microbiology. Particularly in area of Bioinformatics stuff. Working on promoters on bacterial genomes I love coffee and art. I´am Gatolic person\nAquí anoto commandos útiles y texto importante para un proyecto."
+    "text": "PhD,student. Molecular and microbiology.\n(Particularly in area of Bioinformatics stuff)\nWorking on promoters of bacterial genomes"
+  },
+  {
+    "objectID": "index.html#i-love-coffee-and-art.",
+    "href": "index.html#i-love-coffee-and-art.",
+    "title": "☂️ About me",
+    "section": "I love coffee and art. ☕️",
+    "text": "I love coffee and art. ☕️"
+  },
+  {
+    "objectID": "index.html#iam-gatolic-person",
+    "href": "index.html#iam-gatolic-person",
+    "title": "☂️ About me",
+    "section": "I´am Gatolic person 🐈",
+    "text": "I´am Gatolic person 🐈\nAquí anoto commandos útiles y texto importante para mi proyecto y clases."
   },
   {
     "objectID": "blog.html",
     "href": "blog.html",
     "title": "BLog",
     "section": "",
-    "text": "Páginas útiles\n\n\n\nQuarto\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\nHarlow Malloc\n\n\nJan 19, 2023\n\n\n\n\n\n\n\n\n\n\n \n\n\n\nClase_introductoria_quarto_articulo\n\n\n\nQuarto_articulo\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 19, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\nTristan O’Malley\n\n\nJan 16, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Para presentaciones con Quarto\n\n\n\ncode\n\n\npresentaciones\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 23, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\nTristan O’Malley\n\n\nJan 16, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]

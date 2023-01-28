@@ -1,8 +1,8 @@
 ---
-title: "Mi blog"
-image: profile_haly.jpg
+title: "☂️ About me "
+image: profile_haly.png
 about:
-  template: jolla
+  template: jolla # trestles, solana, broadside, marquee
   links:
     - icon: twitter
       text: Twitter
@@ -17,9 +17,15 @@ about:
 ---
 
 PhD,student. Molecular and microbiology.
-Particularly in area of Bioinformatics stuff.
-Working on promoters on bacterial genomes
-I love coffee and art.
-I´am Gatolic person
 
-Aquí anoto commandos útiles y texto importante para un proyecto. 
+(Particularly in area of Bioinformatics stuff)
+
+Working on promoters of bacterial genomes
+
+
+  
+***************************
+## I love coffee and art. ☕️
+## I´am Gatolic person  🐈
+
+Aquí anoto commandos útiles y texto importante para mi proyecto y clases. 
