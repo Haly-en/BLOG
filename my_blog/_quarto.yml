@@ -28,5 +28,6 @@ format:
     code-fold: true
     code-link: true
     code-line-numbers: true
-
+execute:
+  freeze: auto
 

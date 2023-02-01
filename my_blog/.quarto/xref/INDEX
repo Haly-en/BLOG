@@ -19,5 +19,8 @@
   },
   "blog.qmd": {
     "blog.html": "67026551"
+  },
+  "posts/post-with-code/index.knit.md": {
+    "index.knit.html": "e18c8df1"
   }
 }

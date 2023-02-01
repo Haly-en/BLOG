@@ -5,6 +5,7 @@ date: "2023-01-23"
 categories: [code, presentaciones]
 image: "image.jpg"
 ---
+
 Comandos y tips para hacer presentaciones con Quarto
 
 # Para texto al centro
@@ -26,38 +27,21 @@ Para poner un timer en la diapositiva
 
 ``` {{markdown}}
 
-```{r}
-#| echo: false
-library(countdown)
-countdown_timer <- function(
-    minutes = 1, 
-    play_sound = TRUE, 
-    font_size = "2em", 
-    ...
-) {
-  countdown(
-    minutes = minutes,
-    # Fanfare when it's over
-    play_sound = play_sound,
-    # Set timer theme to match solarized colors
-    color_border              = "#404041",
-    color_text                = "white",
-    color_background = "#447099",
-    color_running_background  = "#72994E",
-    color_running_text        = "white",
-    color_finished_background = "#EE6331",
-    color_finished_text       = "white",
-    font_size = font_size,
-    ...
-  )
-}
-```
+::: {.cell}
+
+:::
 
 Y Para llamarlo dentro de las diapositivas
 
 ```{{markdown}}
-```{R}
-#| echo: false
-countdown_timer(1)
+::: {.cell}
+::: {.cell-output-display}
+```{=html}
+<div class="countdown" id="timer_ac996738" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
 ```
+:::
+:::
 ```

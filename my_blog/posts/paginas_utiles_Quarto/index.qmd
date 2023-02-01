@@ -2,19 +2,20 @@
 title: "Páginas útiles"
 author: "Haly-en"
 date: "2023-01-20"
-draft: true
+draft: false
 categories: [Quarto]
 ---
 
 # Blogs interesantes
-* Isabela Velasquez
 
-- Aquí un link para hacer un [BLOG_QMD](https://ivelasq.quarto.pub/building-a-blog-with-quarto/workflow/write-docs/)
+
+ Aquí un link para hacer un [BLOG_QMD](https://ivelasq.quarto.pub/building-a-blog-with-quarto/workflow/write-docs/)
 
 # Comandos especiales
 
 - utf8_print("\u03C3")
-```
+
+``` {{markdown}}
 "σ"
 
 μ <- abs(digamma(1))

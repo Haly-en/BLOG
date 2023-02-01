@@ -3,7 +3,7 @@ title: "Clase introductoria quarto artículo"
 author: "Haly-en"
 date: "2023-01-19"
 categories: [Quarto_articulo]
-draft: true
+draft: false
 ---
 
 ![](quarto.png)
@@ -16,10 +16,12 @@ Quarto es la próxima generación de RMarkdown para publicación, que incluye do
 
 # ¿Qué vamos a aprender aquí?
 
-En este post encontrarás todo lo relacionado a la construcción de un artículo tipo plos con Quarto.
+Empezaremos con el template para la bendita tesis.
+El template/tesis lo iremos trabajando conforme vayan surguiendo las dudas, casi siempre cuando ya estás escribiendo es que necesitamos saber cómo se hace esto y aquello. 
+Además del template veremos de todo lo relacionado a la construcción de un artículo `tipo plos`con Quarto.\n 
 
 ::: panel-tabset
-## Instalación
+## Instalación de `Quarto`
 
 Aquí los links para instalar los programas
 
@@ -41,7 +43,7 @@ Descargar Rstudio si va a trabajar desde ahí. Se puede utilizar la terminal, VS
 Idealmente actualizar/usar a R 4.1 or R 4.2
 :::
 
-## Template plos
+## Template `plos`
 
 Utilizar template de plos_journal [git_plos](https://github.com/quarto-journals/plos/blob/main/README.md)
 
@@ -52,12 +54,35 @@ Utilizar template de plos_journal [git_plos](https://github.com/quarto-journals/
 
 Una vez que instalas o usas el template, se generan archivos necesarios para utilizar el template.☂️
 
-Para empezar, en el archivo *.qmd* ahí se va a guardar el texto de tu articulo, junto con un pequeño código de configuración al principio
+Para empezar, en el archivo *.qmd* ahí se va a guardar el texto de tu artículo, junto con un pequeño código de configuración al principio
+
+
+
+### Tables
+
+``` {{markdown}}
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|    12 | 12   | 12      |   12   |
+|   123 | 123  | 123     |  123   |
+|     1 | 1    | 1       |   1    |
+
+: Table Column Widths {tbl-colwidths="[10,30,30,30]"}
+```
+
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|    12 | 12   | 12      |   12   |
+|   123 | 123  | 123     |  123   |
+|     1 | 1    | 1       |   1    |
+
+: Table Column Widths {tbl-colwidths="\[10,30,30,30\]"}
 
 ::: panel-tabset
 
 # CÓDIGO
-```
+
+``` {{markdown}}
 ::: callout-note
 Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
 :::
