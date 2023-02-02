@@ -3,6 +3,7 @@ title: "Clase introductoria quarto artículo"
 author: "Haly-en"
 date: "2023-01-19"
 categories: [Quarto_articulo]
+image: "quarto.png"
 draft: false
 ---
 
