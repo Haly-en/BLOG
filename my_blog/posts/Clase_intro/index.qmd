@@ -14,6 +14,9 @@ Quarto® es un sistema de publicación científica y técnica de código abierto
 
 Quarto es la próxima generación de RMarkdown para publicación, que incluye documentos dinámicos y estáticos y compatibilidad con lenguajes de programación multilingües (Python, R, bash).
 
+En otras `palabras`:es un sistema que permite la integración de código en documentos de texto plano y que evolucionó para crear diferentes formatos de texto con integración para otros lenguajes de programación. 
+
+
 # ¿Qué vamos a aprender aquí?
 
 Empezaremos con el template para la bendita tesis.
@@ -58,7 +61,7 @@ Para empezar, en el archivo *.qmd* ahí se va a guardar el texto de tu artículo
 
 
 
-### Tables
+### Tablas
 
 ``` {{markdown}}
 | Right | Left | Default | Center |
@@ -68,6 +71,7 @@ Para empezar, en el archivo *.qmd* ahí se va a guardar el texto de tu artículo
 |     1 | 1    | 1       |   1    |
 
 : Table Column Widths {tbl-colwidths="[10,30,30,30]"}
+#checar los puntitos en cada pipe (|) por ejemplo;  |---: significa a la derecha, así :---: centro  
 ```
 
 | Right | Left | Default | Center |
