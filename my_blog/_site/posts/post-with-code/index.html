@@ -197,9 +197,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
 <li>
-<a href="#para-texto-al-centro" id="toc-para-texto-al-centro" class="nav-link active" data-scroll-target="#para-texto-al-centro">Para texto al centro</a>
+<a href="#comandos-y-tips-para-hacer-presentaciones-con-quarto" id="toc-comandos-y-tips-para-hacer-presentaciones-con-quarto" class="nav-link active" data-scroll-target="#comandos-y-tips-para-hacer-presentaciones-con-quarto">Comandos y tips para hacer presentaciones con Quarto</a>
   <ul class="collapse">
-<li><a href="#yml-para-template-de-presentaci%C3%B3n-tutos" id="toc-yml-para-template-de-presentación-tutos" class="nav-link" data-scroll-target="#yml-para-template-de-presentaci%C3%B3n-tutos">Yml para template de presentación tutos</a></li>
+<li><a href="#para-texto-al-centro" id="toc-para-texto-al-centro" class="nav-link" data-scroll-target="#para-texto-al-centro">Para texto al centro</a></li>
+  <li><a href="#para-poner-un-timer-en-la-diapositiva" id="toc-para-poner-un-timer-en-la-diapositiva" class="nav-link" data-scroll-target="#para-poner-un-timer-en-la-diapositiva">Para poner un timer en la diapositiva</a></li>
+  <li><a href="#yml-para-template-de-presentaci%C3%B3n-tutos" id="toc-yml-para-template-de-presentación-tutos" class="nav-link" data-scroll-target="#yml-para-template-de-presentaci%C3%B3n-tutos">Yml para template de presentación tutos</a></li>
   <li><a href="#para-ver-cosas-del-pdb-con-molstar" id="toc-para-ver-cosas-del-pdb-con-molstar" class="nav-link" data-scroll-target="#para-ver-cosas-del-pdb-con-molstar">Para ver cosas del PDB con molstar:</a></li>
   <li><a href="#ejemplo-de-tabla-con-kable" id="toc-ejemplo-de-tabla-con-kable" class="nav-link" data-scroll-target="#ejemplo-de-tabla-con-kable">Ejemplo de tabla con kable:</a></li>
   <li>
@@ -222,8 +224,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><p>Comandos y tips para hacer presentaciones con Quarto</p>
-<section id="para-texto-al-centro" class="level1"><h1>Para texto al centro</h1>
+<main class="content quarto-banner-title-block" id="quarto-document-content"><section id="comandos-y-tips-para-hacer-presentaciones-con-quarto" class="level1"><h1>Comandos y tips para hacer presentaciones con Quarto</h1>
+<section id="para-texto-al-centro" class="level2"><h2 class="anchored" data-anchor-id="para-texto-al-centro">Para texto al centro</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {{markdown}} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>##  {background-image="https://images.unsplash.com/4/madebyvadim.jpg?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1469&amp;q=80" style="margin: auto;"}</span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a>. . .</span>
@@ -234,24 +236,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-8"><a href="#cb1-8"></a>Ease of Use VS Full Details</span>
 <span id="cb1-9"><a href="#cb1-9"></a></span>
 <span id="cb1-10"><a href="#cb1-10"></a>&lt;/h1&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Para poner un timer en la diapositiva</p>
+</section><section id="para-poner-un-timer-en-la-diapositiva" class="level2"><h2 class="anchored" data-anchor-id="para-poner-un-timer-en-la-diapositiva">Para poner un timer en la diapositiva</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource markdown {{markdown}} number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a></span>
 <span id="cb2-2"><a href="#cb2-2"></a>::: {.cell}</span>
 <span id="cb2-3"><a href="#cb2-3"></a></span>
 <span id="cb2-4"><a href="#cb2-4"></a>:::</span>
 <span id="cb2-5"><a href="#cb2-5"></a></span>
-<span id="cb2-6"><a href="#cb2-6"></a>Y Para llamarlo dentro de las diapositivas</span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="fu">## Y Para llamarlo dentro de las diapositivas</span></span>
 <span id="cb2-7"><a href="#cb2-7"></a></span>
 <span id="cb2-8"><a href="#cb2-8"></a><span class="in">```{markdown}</span></span>
 <span id="cb2-9"><a href="#cb2-9"></a>::: {.cell}</span>
 <span id="cb2-10"><a href="#cb2-10"></a>::: {.cell-output-display}</span>
 <span id="cb2-11"><a href="#cb2-11"></a><span class="in">```{=html}</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a><span class="in">&lt;div class="countdown" id="timer_0178d98e" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;"&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="in">&lt;div class="countdown" id="timer_04bbc474" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;"&gt;</span></span>
 <span id="cb2-13"><a href="#cb2-13"></a><span class="in">&lt;div class="countdown-controls"&gt;&lt;button class="countdown-bump-down"&gt;&amp;minus;&lt;/button&gt;&lt;button class="countdown-bump-up"&gt;&amp;plus;&lt;/button&gt;&lt;/div&gt;</span></span>
 <span id="cb2-14"><a href="#cb2-14"></a><span class="in">&lt;code class="countdown-time"&gt;&lt;span class="countdown-digits minutes"&gt;01&lt;/span&gt;&lt;span class="countdown-digits colon"&gt;:&lt;/span&gt;&lt;span class="countdown-digits seconds"&gt;00&lt;/span&gt;&lt;/code&gt;</span></span>
 <span id="cb2-15"><a href="#cb2-15"></a><span class="in">&lt;/div&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>::: :::</p>
-<section id="yml-para-template-de-presentación-tutos" class="level2"><h2 class="anchored" data-anchor-id="yml-para-template-de-presentación-tutos">Yml para template de presentación tutos</h2>
+</section><section id="yml-para-template-de-presentación-tutos" class="level2"><h2 class="anchored" data-anchor-id="yml-para-template-de-presentación-tutos">Yml para template de presentación tutos</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {{markdown}} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>---</span>
 <span id="cb3-2"><a href="#cb3-2"></a>title: Tu título </span>
 <span id="cb3-3"><a href="#cb3-3"></a>subtitle: tu nombre # puede ser en comillas o sin. </span>
