@@ -29,5 +29,5 @@ format:
     code-link: true
     code-line-numbers: true
 execute:
-  freeze: auto
+  freeze: true
 
