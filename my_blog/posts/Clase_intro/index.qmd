@@ -64,6 +64,12 @@ Para empezar, en el archivo *.qmd* ahí se va a guardar el texto de tu artículo
 
 ### Tablas
 
+Las tablas son muy importantes, entonces...
+En esta página puedes copiar desde un archivo excel la tabla que ya está escrita o ir rellenado la tabla de acuerdo a lo que tú necesites 
+Y te regresa un formato para quarto 
+* [Tablas Markdown](https://rpubs.com/Juve_Campos/tablasRMarkdown)
+* [Kable](https://rpubs.com/Juve_Campos/tablasRMarkdown) para un formato más padre. 
+
 ``` {{markdown}}
 | Right | Left | Default | Center |
 |------:|:-----|---------|:------:|
@@ -101,3 +107,29 @@ Note that there are five types of callouts, including: `note`, `tip`, `warning`,
 :::
 
 Aquí para los direntes tipos de [journals](https://github.com/quarto-journals)
+
+```{{yaml}}
+---
+title: "How to justify text in Quarto"
+format: html
+engine: knitr
+---
+
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+## Quarto
+
+::: {.justify}
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+Quarto is based on Pandoc and uses its variation of markdown as its underlying document syntax. Pandoc markdown is an extended and slightly revised version of John Gruber's Markdown syntax and Markdown is a plain text format.
+
+Markdown is a plain text format that is designed to be easy to write, and, even more importantly, easy to read:
+
+:::
+```

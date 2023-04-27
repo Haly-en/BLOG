@@ -2,8 +2,9 @@
 title: "Para presentaciones con Quarto"
 author: "Haly-en"
 date: "2023-01-23"
-categories: [code, presentaciones]
+categories: [presentaciones]
 image: "image.jpg"
+draft: false
 ---
 Comandos y tips para hacer presentaciones con Quarto
 
@@ -60,4 +61,599 @@ Y Para llamarlo dentro de las diapositivas
 #| echo: false
 countdown_timer(1)
 ```
+
+
+## Yml para template de presentación tutos
+
+
+```{{markdown}}
+---
+title: Tu título 
+subtitle: tu nombre # puede ser en comillas o sin. 
+author:   # Aquí van los nombres de los tutores o sinodales
+  - name: Dr. A
+    affiliations:
+      - id: uni
+        name: institucion
+  - name: Dra. B
+    affiliations:
+      - name: FC-UNAM
+  - name: Dra.C
+    affiliations:
+      - name: FC-UNAM
+date: today
+date-format: long 
+format:
+  revealjs: 
+    theme: [default, custom.css, styles.scss]
+    slide-number: c/t
+    show-slide-number: all
+    transition: fade
+    background-transition: fade
+    highlight-style: pygments
+    #header-logo: logo-ibt/logo_ibt_600dpi.png 
+    #footer: "Tutoral Numero__"
+    width: 1280
+    height: 920
+    max-scale: 1.0
+filters:
+  - reveal-header
+bibliography: references.bib
+biblio-style: apa
+code-wrap: auto
+execute: 
+  freeze: auto
+---
 ```
+
+## Para ver cosas del PDB con molstar: 
+
+Para más información visitar la página [Github extensión de molstar](https://github.com/jmbuhr/quarto-molstar)
+
+```{{markdown}}
+AQUí una diapositiva con fondo, y cargas el pdb descargado o desde el link directo al pdb...
+
+## Cosa de molstar {background="#43464B"}
+
+{{< mol-rcsb 7sgl >}}
+
+```
+
+
+## Ejemplo de tabla con kable:
+
+
+```{r}
+# Es más limpio importar los datos.
+
+library(readr)
+library(tibble)
+library(kableExtra)
+tbl1_weik2000 <- read_csv("Table1_Weik2000.csv" ) 
+tbl1_weik2000 <- tibble::column_to_rownames(tbl1_weik2000, "Dataset")
+T_table_weik <- t(tbl1_weik2000)
+nomb_col <- colnames(T_table_weik)
+kbl(T_table_weik ) %>%
+  kable_classic(full_width = F) %>%
+  kable_styling("striped") %>%
+  column_spec(2, bold = T, color = "white", background = spec_color(1:9, end = 0.9, option = "D", direction = -1)) 
+
+knitr::asis_output('\U212B')
+#knitr::options("kableExtra.html.bsTable" = T)
+```
+
+
+
+## Aquí la tabla anteriór pero sólo pegando el código generado por table generator. 
+### Tabla weik
+
+|        **Dataset**        |    **A**    |    **B**    |    **C**    |    **D**    |    **E**    |    **F**    |    **G**    |    **H**    |    **I**    |
+|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
+|                           |             |             |             |             |             |             |             |             |             |
+|    **Resolution (Å)**     |   40-2.05   |   40-2.1    |   40-2.1    |   40-2.3    |   40-2.5    |   40-2.65   |   40-2.8    |   40-2.9    |   40-3.0    |
+|                           |             |             |             |             |             |             |             |             |             |
+| **No unique reflections** |    62401    |    56543    |    58334    |    44671    |    34910    |    29417    |    25004    |    21801    |    20415    |
+|                           |             |             |             |             |             |             |             |             |             |
+|      **Redundancy**       |     2.1     |     1.8     |     1.8     |     2.1     |     2.1     |     2.1     |     2.1     |     1.8     |     2.1     |
+|                           |             |             |             |             |             |             |             |             |             |
+|     **〈I〉/σ〈I〉**      | 16.4 (2.8)  | 13.1 (1.9)  | 13.8 (1.6)  | 14.2 (1.9)  | 13.4 (1.8)  | 12.2 (1.7)  | 10.7 (1.7)  |  8.8 (1.8)  |  9.0 (1.9)  |
+|                           |             |             |             |             |             |             |             |             |             |
+|   **Completeness (%)**    | 99.0 (99.3) | 96.1 (96.9) | 99.0 (99.2) | 99.1 (99.4) | 99.0 (99.4) | 99.0 (99.1) | 98.9 (99.2) | 95.5 (98.6) | 98.8 (99.2) |
+|                           |             |             |             |             |             |             |             |             |             |
+|       **Rmerge(%)**       |     4.7     |     5.1     |     5.2     |     5.4     |     5.8     |     6.5     |     7.1     |     9.4     |     8.6     |
+|                           |             |             |             |             |             |             |             |             |             |
+
+## Tabla weik
+
+| Dataset               | A           | B           | C           | D           | E           | F           | G           | H           | I           |
+|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+|                       |             |             |             |             |             |             |             |             |             |
+| Resolution (Å)        | 40-2.05     | 40-2.1      | 40-2.1      | 40-2.3      | 40-2.5      | 40-2.65     | 40-2.8      | 40-2.9      | 40-3.0      |
+|                       |             |             |             |             |             |             |             |             |             |
+| No unique reflections | 62401       | 56543       | 58334       | 44671       | 34910       | 29417       | 25004       | 21801       | 20415       |
+|                       |             |             |             |             |             |             |             |             |             |
+| Redundancy            | 2.1         | 1.8         | 1.8         | 2.1         | 2.1         | 2.1         | 2.1         | 1.8         | 2.1         |
+|                       |             |             |             |             |             |             |             |             |             |
+| 〈I〉/σ〈I〉          | 16.4 (2.8)  | 13.1 (1.9)  | 13.8 (1.6)  | 14.2 (1.9)  | 13.4 (1.8)  | 12.2 (1.7)  | 10.7 (1.7)  | 8.8 (1.8)   | 9.0 (1.9)   |
+|                       |             |             |             |             |             |             |             |             |             |
+| Completeness (%)      | 99.0 (99.3) | 96.1 (96.9) | 99.0 (99.2) | 99.1 (99.4) | 99.0 (99.4) | 99.0 (99.1) | 98.9 (99.2) | 95.5 (98.6) | 98.8 (99.2) |
+|                       |             |             |             |             |             |             |             |             |             |
+| Rmerge(%)             | 4.7         | 5.1         | 5.2         | 5.4         | 5.8         | 6.5         | 7.1         | 9.4         | 8.6         |
+|                       |             |             |             |             |             |             |             |             |             |
+
+## Es más limpio importar los datos.
+
+```{r}
+#| tbl-cap: Tabla 1 de [@Weik2000].
+#Es más limpio importar los datos.
+library(readr)
+tbl1_weik2000 <- read_csv("Table1_Weik2000.csv")
+```
+
+```{r}
+#| results: asis
+library(knitr)
+library(tidyr)
+library(kableExtra)
+tab <- kbl(tbl1_weik2000) %>%
+  kable_classic(full_width = F) %>%
+  row_spec(1, color = "lightgray", background = "darkred")
+cat(tab)
+
+```
+
+## flow chart
+
+::: {.fragment .fade-in}
+::: {.fragment .semi-fade-out}
+::: {.blackbox .absolute .center .small data-latex="" top="15%" left="4%" width="350"}
+Texto que quiero que vaya al centro y en un cuadrado como los objetivos del proyecto o algo aasí**Algo cool**
+:::
+:::
+:::
+
+## otro intento
+
+::: {.rectangle .absolute .center .small top="15%" left="4%" width="350"}
+:::
+
+``` {{markdown}}
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 8
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#bdbdbd',
+      'primaryTextColor': '#000000',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#980043',
+      'secondaryColor': '#bdbdbd',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
+flowchart TD
+ A(INICIO) -->|Seleccionar| C(otra cosa <br> con salto de linea)
+ C --> B(Hacer algo)
+ B --> D(otra cosa )
+ D --> E(Salto de línea <br> más cosas interesantes )
+ E --> F( Terminar para <br> ir concluyendo)
+ F --> id1>Realizar un análisis comparativo]
+
+```
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 8
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#bdbdbd',
+      'primaryTextColor': '#000000',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#980043',
+      'secondaryColor': '#bdbdbd',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
+flowchart TD
+ A(INICIO) -->|Seleccionar| C(otra cosa <br> con salto de linea)
+ C --> B(Hacer algo)
+ B --> D(otra cosa )
+ D --> E(Salto de línea <br> más cosas interesantes )
+ E --> F( Terminar para <br> ir concluyendo)
+ F --> id1>Realizar un análisis comparativo]
+
+```
+
+## Figuras
+
+``` {{markdown}}
+
+::: {layout-nrow="2" layout-ncol="1" fig-align="center" width="100%"}
+![](Alguna figura.png)
+
+![](Otra figura.png)
+
+
+Modificadas de [@Weik2000].
+:::
+```
+
+
+## video
+
+::: {#fig-elephant}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SNggmeilXDQ">
+
+</iframe>
+
+Elephant
+:::
+
+## Radiólisis del agua
+
+<br> [*rayos X*⚡]{.absolute .small top="17%" left="33%" width="350"}
+
+::: {.center .big}
+H~2~O  ⟶   H~2~O^+●^ +  *e* ^⎻^                   (1)
+:::
+
+. . .
+
+[*rayos X*⚡]{.absolute .small top="25.8%" left="33%" width="350"}
+
+::: {.center .big}
+H~2~O  ⟶  H~2~O^\*^                               (2)
+:::
+
+. . .
+
+::: {.center .big}
+H~2~O^+●^ +  H~2~O⟶ H~3~O^\*^ + OH^+●^      (3)
+:::
+
+. . .
+
+::: {.center .big}
+*e* *⎻* +   *n*H~2~O⟶ *e* *⎻~solv.~*                  (4)
+:::
+
+. . .
+
+::: {.center .big}
+H~2~O\* +  H~2~O⟶ H^●^ + OH^●^               (5)
+:::
+
+. . .
+
+::: {.center .big}
+*e⎻~solv.~*  +   H^+●^⟶ H~3~O^\*^ + OH^+●^       (6)
+:::
+
+::: {.center .big}
+Tomado de @Garman2010
+:::
+
+## Objetivos
+::: {.callout-note icon=false}
+
+## Objetivo
+
+::: {.rectangle .center .absolute  top="35%" left="1%" .big}
+Aquí texto importante de los objetivos `[**texto reasaltado**]{.big} ` 
+:::
+
+:::
+
+## Customs 
+
+```{{markdown}}
+
+/*-- scss:rules --*/
+
+.reveal a {
+	line-height: 1.5em;
+	color: #eb811b;
+	font-weight: 300;
+}
+
+.reveal .footer a {
+	color: #eb811b !important;
+}
+
+.reveal p {
+	font-weight: 300;
+}
+
+.reveal .slide ul li,
+.reveal .slide ol li {
+	font-weight: 300;
+}
+
+// maximum height of code blocks before scrolling is used
+.reveal pre.sourceCode code {
+	max-height: 700px; // default 500
+}
+
+
+// Aqui modificas el subtitulo que es tu nombre //
+p.subtitle {
+	// margin-top: -10px;
+	// padding-bottom: -20px;
+	color: #1a292c;
+	text-shadow: none;
+	font-weight: 300;
+	font-size: 40px;
+	text-align: left; //puede ser center o right
+	margin-left: 15px;
+}
+p.author {
+	color: #1a292c;
+	text-shadow: none;
+	font-weight: 300;
+	font-size: 30px;
+	text-align: left;
+	margin-left: 15px;
+	margin-bottom: -10px;
+	margin-top: 10px;
+}
+
+p.date {
+	color: #1a292c;
+	text-shadow: none;
+	font-weight: 300;
+	font-size: 30px;
+	text-align: center;
+	margin-left: 15px;
+	// margin-bottom: -30px;
+}
+
+p.subtitle:after {
+	content: "";
+	display: block;
+	border: none;
+	background-color: #eb811b;
+	color: #eb811b;
+	height: 1px;
+	margin: 25px 0 25px;
+}
+
+// Section break slide
+hr,
+h1::after {
+	content: "";
+	display: block;
+	border: none;
+	background-color: #eb811b;
+	color: #eb811b;
+	height: 1px;
+	margin: 1em 10px 0 10px;
+}
+
+// Override h1 style for title slide (remove section break slide style)
+hr,
+h1.title::after {
+	content: "";
+	display: block;
+	border: none;
+	background-color: transparent !important;
+	color: transparent !important;
+	height: 0px;
+	margin: 0px !important;
+}
+
+h2::after.title {
+	margin: 0px 0px 0px 0;
+}
+
+//Aquí moficas el número de páginas//
+.reveal .slide-number a {
+	font-size: 110%;
+	background-color: #fafafa;
+	border-radius: 12px;
+	position: margin-left;
+	padding: 5px;
+}
+
+// aquí es donde modificas la parte del título princial//
+h1.title {
+	color: #ffeda0;
+	background-color: #23373b;
+	font-size: 60px;
+	text-shadow: none;
+	font-weight: 400;
+	text-align: center;
+	margin-left: 15px;
+	padding-top: 10px;
+}
+.reveal h2 {
+	background-color:#d9d9d9;
+	padding: 5px 0px 5px 10px;
+	color: #800026;
+	border-radius: 12px;
+}
+.middle {
+  vertical-align: middle;
+}
+
+.center img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.medium {
+  font-size: 0.85em;
+}
+
+.small {
+  font-size: 0.75em;
+}
+
+.molstar-app {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  padding-bottom: 56.25%;
+}
+
+.reveal .progress {
+	color: gray;
+  height: 8px;
+}
+
+iframe {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/*********************************************
+ * SLIDES
+ *********************************************/
+
+.reveal {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	touch-action: pinch-zoom;
+}
+
+.box {
+  border-radius: 10px;
+  background-color: yellow;
+  padding: 1em;
+  text-align: left;
+  vertical-align: center;
+  border: 5px solid $presentation-heading-color;
+}
+
+.blackbox {
+  padding: 1em;
+  position: relative;
+  background: white;
+  color: black;
+  border: 2px solid orange;
+  border-radius: 10px;
+  
+}
+
+.rectangle {
+  padding: 1em;
+  position: relative;
+  background: none;
+  color: black;
+  border: 2px solid orange;
+  border-radius: 10px;
+  
+}
+/*-- scss:defaults --*/
+
+// fonts
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,700,700i);
+@import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono|JetBrains+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+$font-family-sans-serif: "Roboto", "Fira Sans", "Droid Serif", serif !default;
+$font-family-monospace: "JetBrains Mono", "Fira Code", monospace;
+/*$font-family-sans-serif: "  Crimson Text  ", sans-serif;*/
+/*$presentation-heading-color: #081d58 !default;*/
+$presentation-title-slide-text-align: "center";
+$presentation-h2-slide-text-align: "center";
+$code-block-font-size: 0.6em;
+$code-color: #5f5f5f;
+$presentation-h2-font-size: 1.4em;
+$presentation-font-size-root: 32px;
+$presentation-line-height: 1.5em;
+$presentation-heading-font-weight: 400;
+
+
+/*-- scss:rules --*/
+
+.reveal .custom-url a {
+  position: absolute;
+  color: #81a2be;
+  font-size: 1.5em;
+  text-align: right;
+  right: 20px;
+  top: 570px;
+}
+
+details>summary {
+  font-size: 0.75em;
+}
+
+
+.medium {
+  font-size: 0.85em;
+}
+
+.small {
+  font-size: 0.75em;
+}
+.big {
+  font-size: 1.2em;
+}
+
+.reveal .slide .in-out {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  padding-left: 1em;
+  background: #E8E8E8;
+  font-family: $font-family-monospace;
+  font-size: 0.6em;
+}
+
+.reveal .slide .goal {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  padding-left: 1em;
+  background: #ccddeb;
+}
+
+.molstar-app {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  padding-bottom: 56.25%;
+}
+
+span {
+  content: "\212B";
+}
+
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg-pghf{background-color:#225EA8;color:#FFF;text-align:center;vertical-align:top}
+.tg-7p6x{background-color:#081D57;color:#FFF;text-align:center;vertical-align:top}
+.tg-baqh{text-align:center;vertical-align:top}
+.tg-yxcw{background-color:#FFFFDA;border-color:inherit;text-align:center;vertical-align:top}
+.tg-24tk{background-color:#F2F2F2;border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+.tg-2p8v{background-color:#F2F2F2;font-weight:bold;text-align:center;vertical-align:top}
+.tg-u7h8{background-color:#EDF9B1;border-color:inherit;text-align:center;vertical-align:top}
+.tg-u9n8{background-color:#C7E9B4;text-align:center;vertical-align:top}
+.tg-u1u2{background-color:#7FCDBB;text-align:center;vertical-align:top}
+.tg-k470{background-color:#40B6C5;text-align:center;vertical-align:top}
+.tg-eg3g{background-color:#1D91C0;color:#FFF;text-align:center;vertical-align:top}
+
+```
+
+
+

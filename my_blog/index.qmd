@@ -13,7 +13,6 @@ about:
     - icon: github
       text: Github
       href: https://github.com
-
 ---
 
 PhD,student. Molecular and microbiology.
@@ -22,10 +21,18 @@ PhD,student. Molecular and microbiology.
 
 Working on promoters of bacterial genomes
 
+------------------------------------------------------------------------
 
-  
-***************************
 ## I love coffee and art. ☕️
-## I´am Gatolic person  🐈
 
-Aquí anoto commandos útiles y texto importante para mi proyecto y clases. 
+## I´am Gatolic person 🐈
+
+Aquí anoto commandos útiles y utilería para presentaciones, libros, artículo... etc. Utilizando:
+
+-   Quarto
+
+-   R
+
+-   Python
+
+-   Perl

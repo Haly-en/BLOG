@@ -1,3 +1,9 @@
 ---
 title: "Recursos"
 ---
+
+# Stickers
+
+-   [Stickers de los diferentes paquetes](https://github.com/rstudio/hex-stickers)
+# Mine-cetinkaya
+-   [mine-cetinkaya-runde](https://github.com/mine-cetinkaya-rundel)

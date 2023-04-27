@@ -1,0 +1,48 @@
+---
+title: "Comandos útiles"
+author: "mcarrera"
+date: "2023-02-16"
+categories: [comandos utiles]
+---
+
+Aquí van comandos útiles de todo tipos. para perl, bash y R. 
+![](thumbnail.jpg)
+
+` while ( ) { next if /^$/; # skip blank lines print; } `
+
+Para poder poner el fasta una línea en multiple linea sed '/^>/!s/.\{71\}/&\n/g' infile
+
+Corrí el alineamiento con:
+
+` nohup mafft --thread 8 --threadtb 5 --threadit 0 --reorder --auto monkey_mult_linea.fasta  > monkey_alineamiento.fasta & ` 
+
+ Y luego necesité hacer una linea con el programa una línea A hacer árbol con:
+
+` nohup raxmlHPC-PTHREADS-AVX -m GTRGAMMA -s /home/mcarrera/virus_monkey/fas_alineamiento.fasta -# 10 -n arbol -T 40 -p 15039 & `
+
+Tip
+` yo utilizó mafft-7.407 en línea de comandos, con 6 threads.`
+
+` mafft --localpair --maxiterate 1000 --reorder --thread $NSLOTS $IN_FILE > $OUT_FILE `
+
+::: callout-tip .column-margin
+
+*nota: Aquí puedes cambiar el algoritmo que mejor se ajuste a tus datos, te comparto la liga, para que lo cheques, en mi experiencia me ha funcionado localpair. https://mafft.cbrc.jp/alignment/software/algorithms/algorithms.html
+
+:::
+
+## A construir árboles
+
+ Con raxml-8.2.12, en línea de comandos: 
+ Búsqueda del mejor árbol de máxima verosimilitud (ML) -s:alineamiento -#: número de búsqueda de árboles de máxima verosimilitud (ML), aquí si le das diez o mil no hay diferencia. -p: número aleatoria para las inferencias de parsimonia, en este caso puedes poner 12345 o cualquier otro número, en este caso es mi fecha de cumpleaños :v -m: el modelo con el que se construye el árbol, yo he ocupado el GTR, porque menciona que las tasas de cambio para cada nucleótido es diferente, no como el modelo Jukes Cantor, que considera que la tasa de cambió es igual para cada nucleótido. RAXML utiliza dos algoritmos CAT y GAMMA, pero el modelo refinado es el GAMA. El CAT es cuandoo tienes muchos datos.
+ 
+` raxmlHPC-PTHREADS-AVX -m GTRGAMMA -s $InFile -# 10 -n $OutFile1 -T $NSLOTS -p 15039 `
+
+Ahora a buscar el soporte para el arbol ML -#:
+En esta opción le das el número de soporte que deseas, en este caso es de 1,000 bootstrap. -b:
+ número aleatorio de arranque 
+` raxmlHPC-PTHREADS-AVX -m GTRGAMMA -s $InFile -# 1000 -n $OutFile2 -T $NSLOTS -p 15039 -b 15039 `
+
+Se integran el bootstrapping al árbol
+
+` raxmlHPC-PTHREADS-AVX -m GTRGAMMA -f b -t OutFile1 -z OutFileT2 -n $OutFile3 -T $NSLOTS -p 15039`
