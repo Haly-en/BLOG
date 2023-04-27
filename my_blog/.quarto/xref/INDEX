@@ -22,5 +22,11 @@
   },
   "posts/post-with-code/index.knit.md": {
     "index.knit.html": "e18c8df1"
+  },
+  "posts/Manipulacion_de_datos/index.qmd": {
+    "index.html": "cd4ccea4"
+  },
+  "posts/comandos_utiles/index.qmd": {
+    "index.html": "82426227"
   }
 }
