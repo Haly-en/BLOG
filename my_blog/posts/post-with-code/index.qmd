@@ -4,11 +4,11 @@ author: "Haly-en"
 date: "2023-01-23"
 categories: [presentaciones]
 image: "image.jpg"
-draft: false
----
-Comandos y tips para hacer presentaciones con Quarto
 
-# Para texto al centro
+---
+# Comandos y tips para hacer presentaciones con Quarto
+
+## Para texto al centro
 ``` {{markdown}}
 ##  {background-image="https://images.unsplash.com/4/madebyvadim.jpg?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1469&q=80" style="margin: auto;"}
 
@@ -23,7 +23,7 @@ Ease of Use VS Full Details
 
 ```
 
-Para poner un timer en la diapositiva 
+## Para poner un timer en la diapositiva 
 
 ``` {{markdown}}
 
@@ -54,7 +54,7 @@ countdown_timer <- function(
 }
 ```
 
-Y Para llamarlo dentro de las diapositivas
+## Y Para llamarlo dentro de las diapositivas
 
 ```{{markdown}}
 ```{R}
