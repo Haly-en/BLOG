@@ -600,5 +600,26 @@ span {
 
 ```
 
+## {background-color="#FFFFFF"}
 
+::: {.columns}
+::: {.column width=55%}
+- Aquí aparece en una colum
+
+:::
+
+::: {.column width=13%}
+
+::: 
+::: {.column width=32%}
+
+<center>
+![](reader.png){width=75%}
+
+![](gen5_ejemplo.png){width=75%}
+</center>
+
+:::
+
+:::
 

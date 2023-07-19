@@ -1,0 +1,18 @@
+---
+title: "Manipulación de datos con R"
+author: "mcarrera"
+date: "29-04-23"
+categories: [comandos utiles]
+---
+
+### Para asignar nombre a las columnas :
+
+```{r}
+
+base_datos <- text::column_to_rownames(base_datos, loc = 1)
+
+```
+
+Para quitar columnas que no queires de un  data set
+
+`df <- subset(df, select = -c(algo, total) )`
