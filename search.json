@@ -35,20 +35,6 @@
     "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   },
   {
-    "objectID": "posts/comandos_utiles/index.html",
-    "href": "posts/comandos_utiles/index.html",
-    "title": "Comandos útiles",
-    "section": "",
-    "text": "Aquí van comandos útiles de todo tipos. para perl, bash y R.\nwhile ( ) { next if /^$/; # skip blank lines print; }\nPara poder poner el fasta una línea en multiple linea sed ‘/^>/!s/.{71}/&/g’ infile\nCorrí el alineamiento con:\nnohup mafft --thread 8 --threadtb 5 --threadit 0 --reorder --auto monkey_mult_linea.fasta  > monkey_alineamiento.fasta &\nY luego necesité hacer una linea con el programa una línea A hacer árbol con:\nnohup raxmlHPC-PTHREADS-AVX -m GTRGAMMA -s /home/mcarrera/virus_monkey/fas_alineamiento.fasta -# 10 -n arbol -T 40 -p 15039 &\nTip yo utilizó mafft-7.407 en línea de comandos, con 6 threads.\nmafft --localpair --maxiterate 1000 --reorder --thread $NSLOTS $IN_FILE > $OUT_FILE\n::: callout-tip .column-margin\n*nota: Aquí puedes cambiar el algoritmo que mejor se ajuste a tus datos, te comparto la liga, para que lo cheques, en mi experiencia me ha funcionado localpair. https://mafft.cbrc.jp/alignment/software/algorithms/algorithms.html\n:::"
-  },
-  {
-    "objectID": "posts/comandos_utiles/index.html#a-construir-árboles",
-    "href": "posts/comandos_utiles/index.html#a-construir-árboles",
-    "title": "Comandos útiles",
-    "section": "A construir árboles",
-    "text": "A construir árboles\nCon raxml-8.2.12, en línea de comandos: Búsqueda del mejor árbol de máxima verosimilitud (ML) -s:alineamiento -#: número de búsqueda de árboles de máxima verosimilitud (ML), aquí si le das diez o mil no hay diferencia. -p: número aleatoria para las inferencias de parsimonia, en este caso puedes poner 12345 o cualquier otro número, en este caso es mi fecha de cumpleaños :v -m: el modelo con el que se construye el árbol, yo he ocupado el GTR, porque menciona que las tasas de cambio para cada nucleótido es diferente, no como el modelo Jukes Cantor, que considera que la tasa de cambió es igual para cada nucleótido. RAXML utiliza dos algoritmos CAT y GAMMA, pero el modelo refinado es el GAMA. El CAT es cuandoo tienes muchos datos.\nraxmlHPC-PTHREADS-AVX -m GTRGAMMA -s $InFile -# 10 -n $OutFile1 -T $NSLOTS -p 15039\nAhora a buscar el soporte para el arbol ML -#: En esta opción le das el número de soporte que deseas, en este caso es de 1,000 bootstrap. -b: número aleatorio de arranque raxmlHPC-PTHREADS-AVX -m GTRGAMMA -s $InFile -# 1000 -n $OutFile2 -T $NSLOTS -p 15039 -b 15039\nSe integran el bootstrapping al árbol\nraxmlHPC-PTHREADS-AVX -m GTRGAMMA -f b -t OutFile1 -z OutFileT2 -n $OutFile3 -T $NSLOTS -p 15039"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "☂️ About me",
@@ -81,6 +67,6 @@
     "href": "blog.html",
     "title": "BLog",
     "section": "",
-    "text": "Manipulación de datos con R\n\n\n\ncomandos utiles\n\n\n\n\n\n\n\nmcarrera\n\n\nMay 4, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nComandos útiles\n\n\n\ncomandos utiles\n\n\n\n\n\n\n\nmcarrera\n\n\nFeb 16, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPara presentaciones con Quarto\n\n\n\npresentaciones\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 23, 2023\n\n\n\n\n\n\n\n\n\n\n \n\n\n\nPáginas útiles\n\n\n\nQuarto\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClase introductoria quarto artículo\n\n\n\nQuarto_articulo\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 19, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\nTristan O’Malley\n\n\nJan 16, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Manipulación de datos con R\n\n\n\ncomandos utiles\n\n\n\n\n\n\n\nmcarrera\n\n\nMay 4, 2025\n\n\n\n\n\n\n\n\n\n\n \n\n\n\nComandos útiles\n\n\n\ncomandos utiles\n\n\n\n\n\n\n\nmcarrera\n\n\nFeb 16, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPara presentaciones con Quarto\n\n\n\npresentaciones\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 23, 2023\n\n\n\n\n\n\n\n\n\n\n \n\n\n\nPáginas útiles\n\n\n\nQuarto\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClase introductoria quarto artículo\n\n\n\nQuarto_articulo\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 19, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\nTristan O’Malley\n\n\nJan 16, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]

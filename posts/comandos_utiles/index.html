@@ -142,13 +142,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#a-construir-árboles" id="toc-a-construir-árboles" class="nav-link active" data-scroll-target="#a-construir-árboles">A construir árboles</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -156,28 +150,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>Aquí van comandos útiles de todo tipos. para perl, bash y R. <img src="thumbnail.jpg" class="img-fluid"></p>
-<p><code>while ( ) { next if /^$/; # skip blank lines print; }</code></p>
-<p>Para poder poner el fasta una línea en multiple linea sed ‘/^&gt;/!s/.{71}/&amp;/g’ infile</p>
-<p>Corrí el alineamiento con:</p>
-<p><code>nohup mafft --thread 8 --threadtb 5 --threadit 0 --reorder --auto monkey_mult_linea.fasta  &gt; monkey_alineamiento.fasta &amp;</code></p>
-<p>Y luego necesité hacer una linea con el programa una línea A hacer árbol con:</p>
-<p><code>nohup raxmlHPC-PTHREADS-AVX -m GTRGAMMA -s /home/mcarrera/virus_monkey/fas_alineamiento.fasta -# 10 -n arbol -T 40 -p 15039 &amp;</code></p>
-<p>Tip <code>yo utilizó mafft-7.407 en línea de comandos, con 6 threads.</code></p>
-<p><code>mafft --localpair --maxiterate 1000 --reorder --thread $NSLOTS $IN_FILE &gt; $OUT_FILE</code></p>
-<p>::: callout-tip .column-margin</p>
-<p>*nota: Aquí puedes cambiar el algoritmo que mejor se ajuste a tus datos, te comparto la liga, para que lo cheques, en mi experiencia me ha funcionado localpair. https://mafft.cbrc.jp/alignment/software/algorithms/algorithms.html</p>
-<p>:::</p>
-<section id="a-construir-árboles" class="level2">
-<h2 class="anchored" data-anchor-id="a-construir-árboles">A construir árboles</h2>
-<p>Con raxml-8.2.12, en línea de comandos: Búsqueda del mejor árbol de máxima verosimilitud (ML) -s:alineamiento -#: número de búsqueda de árboles de máxima verosimilitud (ML), aquí si le das diez o mil no hay diferencia. -p: número aleatoria para las inferencias de parsimonia, en este caso puedes poner 12345 o cualquier otro número, en este caso es mi fecha de cumpleaños :v -m: el modelo con el que se construye el árbol, yo he ocupado el GTR, porque menciona que las tasas de cambio para cada nucleótido es diferente, no como el modelo Jukes Cantor, que considera que la tasa de cambió es igual para cada nucleótido. RAXML utiliza dos algoritmos CAT y GAMMA, pero el modelo refinado es el GAMA. El CAT es cuandoo tienes muchos datos.</p>
-<p><code>raxmlHPC-PTHREADS-AVX -m GTRGAMMA -s $InFile -# 10 -n $OutFile1 -T $NSLOTS -p 15039</code></p>
-<p>Ahora a buscar el soporte para el arbol ML -#: En esta opción le das el número de soporte que deseas, en este caso es de 1,000 bootstrap. -b: número aleatorio de arranque <code>raxmlHPC-PTHREADS-AVX -m GTRGAMMA -s $InFile -# 1000 -n $OutFile2 -T $NSLOTS -p 15039 -b 15039</code></p>
-<p>Se integran el bootstrapping al árbol</p>
-<p><code>raxmlHPC-PTHREADS-AVX -m GTRGAMMA -f b -t OutFile1 -z OutFileT2 -n $OutFile3 -T $NSLOTS -p 15039</code></p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
