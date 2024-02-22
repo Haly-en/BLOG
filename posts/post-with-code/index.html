@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.4.549">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Haly-en">
 <meta name="dcterms.date" content="2023-01-23">
@@ -16,11 +16,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -45,43 +46,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -105,7 +76,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -114,49 +91,78 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script><style>html{ scroll-behavior: smooth; }</style>
 <script src="../../site_libs/quarto-diagram/mermaid.min.js"></script><script src="../../site_libs/quarto-diagram/mermaid-init.js"></script><link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><link rel="stylesheet" href="../../styles.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script><link rel="stylesheet" href="../../styles.css">
 </head>
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">☂️ About me</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
 <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
- <span class="menu-text">Recursos</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">Recursos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html">
- <span class="menu-text">BLog</span></a>
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">BLog</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Haly-en"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/Haly-en"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/HalyHalymary"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/HalyHalymary"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-<div id="quarto-search" class="" title="Search"></div>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
@@ -226,53 +232,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </h1>
 <p><br></p>
 <section id="yml-para-template-de-presentación-tutos" class="level2"><h2 class="anchored" data-anchor-id="yml-para-template-de-presentación-tutos">Yml para template de presentación tutos</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {{markdown}} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>---</span>
-<span id="cb1-2"><a href="#cb1-2"></a>title: Tu título </span>
-<span id="cb1-3"><a href="#cb1-3"></a>subtitle: tu nombre # puede ser en comillas o sin. </span>
-<span id="cb1-4"><a href="#cb1-4"></a>author:   # Aquí van los nombres de los tutores o sinodales</span>
-<span id="cb1-5"><a href="#cb1-5"></a>  - name: Dr. A</span>
-<span id="cb1-6"><a href="#cb1-6"></a>    affiliations:</span>
-<span id="cb1-7"><a href="#cb1-7"></a>      - id: uni</span>
-<span id="cb1-8"><a href="#cb1-8"></a>        name: institucion</span>
-<span id="cb1-9"><a href="#cb1-9"></a>  - name: Dra. B</span>
-<span id="cb1-10"><a href="#cb1-10"></a>    affiliations:</span>
-<span id="cb1-11"><a href="#cb1-11"></a>      - name: FC-UNAM</span>
-<span id="cb1-12"><a href="#cb1-12"></a>  - name: Dra.C</span>
-<span id="cb1-13"><a href="#cb1-13"></a>    affiliations:</span>
-<span id="cb1-14"><a href="#cb1-14"></a>      - name: FC-UNAM</span>
-<span id="cb1-15"><a href="#cb1-15"></a>date: today</span>
-<span id="cb1-16"><a href="#cb1-16"></a>date-format: long </span>
-<span id="cb1-17"><a href="#cb1-17"></a>format:</span>
-<span id="cb1-18"><a href="#cb1-18"></a>  revealjs: </span>
-<span id="cb1-19"><a href="#cb1-19"></a>    theme: [default, custom.css, styles.scss]</span>
-<span id="cb1-20"><a href="#cb1-20"></a>    slide-number: c/t</span>
-<span id="cb1-21"><a href="#cb1-21"></a>    show-slide-number: all</span>
-<span id="cb1-22"><a href="#cb1-22"></a>    transition: fade</span>
-<span id="cb1-23"><a href="#cb1-23"></a>    background-transition: fade</span>
-<span id="cb1-24"><a href="#cb1-24"></a>    highlight-style: pygments</span>
-<span id="cb1-25"><a href="#cb1-25"></a>    #header-logo: logo-ibt/logo_ibt_600dpi.png </span>
-<span id="cb1-26"><a href="#cb1-26"></a>    #footer: "Tutoral Numero__"</span>
-<span id="cb1-27"><a href="#cb1-27"></a>    width: 1280</span>
-<span id="cb1-28"><a href="#cb1-28"></a>    height: 920</span>
-<span id="cb1-29"><a href="#cb1-29"></a>    max-scale: 1.0</span>
-<span id="cb1-30"><a href="#cb1-30"></a>filters:</span>
-<span id="cb1-31"><a href="#cb1-31"></a>  - reveal-header</span>
-<span id="cb1-32"><a href="#cb1-32"></a>bibliography: references.bib</span>
-<span id="cb1-33"><a href="#cb1-33"></a>biblio-style: apa</span>
-<span id="cb1-34"><a href="#cb1-34"></a>code-wrap: auto</span>
-<span id="cb1-35"><a href="#cb1-35"></a>execute: </span>
-<span id="cb1-36"><a href="#cb1-36"></a>  freeze: auto</span>
-<span id="cb1-37"><a href="#cb1-37"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="in">```{markdown}</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="in">---</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="in">title: Tu título </span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="in">subtitle: tu nombre # puede ser en comillas o sin. </span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="in">author:   # Aquí van los nombres de los tutores o sinodales</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="in">  - name: Dr. A</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="in">    affiliations:</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="in">      - id: uni</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="in">        name: institucion</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="in">  - name: Dra. B</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="in">    affiliations:</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="in">      - name: FC-UNAM</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="in">  - name: Dra.C</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="in">    affiliations:</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="in">      - name: FC-UNAM</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="in">date: today</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="in">date-format: long </span></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="in">format:</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="in">  revealjs: </span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="in">    theme: [default, custom.css, styles.scss]</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="in">    slide-number: c/t</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="in">    show-slide-number: all</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="in">    transition: fade</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="in">    background-transition: fade</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="in">    highlight-style: pygments</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="in">    #header-logo: logo-ibt/logo_ibt_600dpi.png </span></span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="in">    #footer: "Tutoral Numero__"</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="in">    width: 1280</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="in">    height: 920</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="in">    max-scale: 1.0</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="in">filters:</span></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="in">  - reveal-header</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a><span class="in">bibliography: references.bib</span></span>
+<span id="cb1-34"><a href="#cb1-34"></a><span class="in">biblio-style: apa</span></span>
+<span id="cb1-35"><a href="#cb1-35"></a><span class="in">code-wrap: auto</span></span>
+<span id="cb1-36"><a href="#cb1-36"></a><span class="in">execute: </span></span>
+<span id="cb1-37"><a href="#cb1-37"></a><span class="in">  freeze: auto</span></span>
+<span id="cb1-38"><a href="#cb1-38"></a><span class="in">---</span></span>
+<span id="cb1-39"><a href="#cb1-39"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section><section id="para-ver-cosas-del-pdb-con-molstar" class="level2"><h2 class="anchored" data-anchor-id="para-ver-cosas-del-pdb-con-molstar">Para ver cosas del PDB con molstar:</h2>
 <p>Para más información visitar la página <a href="https://github.com/jmbuhr/quarto-molstar">Github extensión de molstar</a></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {{markdown}} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>AQUí una diapositiva con fondo, y cargas el pdb descargado o desde el link directo al pdb...</span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a>## Cosa de molstar {background="#43464B"}</span>
-<span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a>{{&lt; mol-rcsb 7sgl &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="in">```{markdown}</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="in">AQUí una diapositiva con fondo, y cargas el pdb descargado o desde el link directo al pdb...</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="in">## Cosa de molstar {background="#43464B"}</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a></span>
+<span id="cb2-6"><a href="#cb2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section><section id="ejemplo-de-tabla-con-kable" class="level2"><h2 class="anchored" data-anchor-id="ejemplo-de-tabla-con-kable">Ejemplo de tabla con kable:</h2>
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Es más limpio importar los datos.</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Es más limpio importar los datos.</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a></span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="fu">library</span>(readr)</span>
 <span id="cb3-4"><a href="#cb3-4"></a><span class="fu">library</span>(tibble)</span>
@@ -287,7 +298,7 @@ chr (10): Dataset, A, B, C, D, E, F, G, H, I
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>tbl1_weik2000 <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">column_to_rownames</span>(tbl1_weik2000, <span class="st">"Dataset"</span>)</span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>tbl1_weik2000 <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">column_to_rownames</span>(tbl1_weik2000, <span class="st">"Dataset"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2"></a>T_table_weik <span class="ot">&lt;-</span> <span class="fu">t</span>(tbl1_weik2000)</span>
 <span id="cb5-3"><a href="#cb5-3"></a>nomb_col <span class="ot">&lt;-</span> <span class="fu">colnames</span>(T_table_weik)</span>
 <span id="cb5-4"><a href="#cb5-4"></a><span class="fu">kbl</span>(T_table_weik ) <span class="sc">%&gt;%</span></span>
@@ -295,107 +306,106 @@ chr (10): Dataset, A, B, C, D, E, F, G, H, I
 <span id="cb5-6"><a href="#cb5-6"></a>  <span class="fu">kable_styling</span>(<span class="st">"striped"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb5-7"><a href="#cb5-7"></a>  <span class="fu">column_spec</span>(<span class="dv">2</span>, <span class="at">bold =</span> T, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">background =</span> <span class="fu">spec_color</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">end =</span> <span class="fl">0.9</span>, <span class="at">option =</span> <span class="st">"D"</span>, <span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-
-<table class=" lightable-classic table table-striped" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;">
-<thead><tr>
-<th style="text-align:left;">   </th>
-   <th style="text-align:left;"> Resolution (Å) </th>
-   <th style="text-align:left;"> No unique reflections </th>
-   <th style="text-align:left;"> Redundancy </th>
-   <th style="text-align:left;"> $\langle I \rangle / \langle \sigma(I) \rangle$ </th>
-   <th style="text-align:left;"> Completeness (%) </th>
-   <th style="text-align:left;"> $R_{\mathrm{merge}}$ (%) </th>
-  </tr></thead>
+<table class="lightable-classic table table-striped table-sm small" data-quarto-postprocess="true">
+<thead><tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Resolution (Å)</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">No unique reflections</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Redundancy</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">$\langle I \rangle / \langle \sigma(I) \rangle$</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Completeness (%)</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">$R_{\mathrm{merge}}$ (%)</th>
+</tr></thead>
 <tbody>
-<tr>
-<td style="text-align:left;"> A </td>
-   <td style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(187, 223, 39, 1) !important;"> 40-2.05 </td>
-   <td style="text-align:left;"> 62401 </td>
-   <td style="text-align:left;"> 2.1 </td>
-   <td style="text-align:left;"> 16.4 (2.8) </td>
-   <td style="text-align:left;"> 99.0 (99.3) </td>
-   <td style="text-align:left;"> 4.7 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> B </td>
-   <td style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(114, 208, 86, 1) !important;"> 40-2.1 </td>
-   <td style="text-align:left;"> 56543 </td>
-   <td style="text-align:left;"> 1.8 </td>
-   <td style="text-align:left;"> 13.1 (1.9) </td>
-   <td style="text-align:left;"> 96.1 (96.9) </td>
-   <td style="text-align:left;"> 5.1 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> C </td>
-   <td style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(56, 185, 119, 1) !important;"> 40-2.1 </td>
-   <td style="text-align:left;"> 58334 </td>
-   <td style="text-align:left;"> 1.8 </td>
-   <td style="text-align:left;"> 13.8 (1.6) </td>
-   <td style="text-align:left;"> 99.0 (99.2) </td>
-   <td style="text-align:left;"> 5.2 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> D </td>
-   <td style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(31, 159, 136, 1) !important;"> 40-2.3 </td>
-   <td style="text-align:left;"> 44671 </td>
-   <td style="text-align:left;"> 2.1 </td>
-   <td style="text-align:left;"> 14.2 (1.9) </td>
-   <td style="text-align:left;"> 99.1 (99.4) </td>
-   <td style="text-align:left;"> 5.4 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> E </td>
-   <td style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(37, 132, 142, 1) !important;"> 40-2.5 </td>
-   <td style="text-align:left;"> 34910 </td>
-   <td style="text-align:left;"> 2.1 </td>
-   <td style="text-align:left;"> 13.4 (1.8) </td>
-   <td style="text-align:left;"> 99.0 (99.4) </td>
-   <td style="text-align:left;"> 5.8 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> F </td>
-   <td style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(48, 105, 142, 1) !important;"> 40-2.65 </td>
-   <td style="text-align:left;"> 29417 </td>
-   <td style="text-align:left;"> 2.1 </td>
-   <td style="text-align:left;"> 12.2 (1.7) </td>
-   <td style="text-align:left;"> 99.0 (99.1) </td>
-   <td style="text-align:left;"> 6.5 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> G </td>
-   <td style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(62, 75, 138, 1) !important;"> 40-2.8 </td>
-   <td style="text-align:left;"> 25004 </td>
-   <td style="text-align:left;"> 2.1 </td>
-   <td style="text-align:left;"> 10.7 (1.7) </td>
-   <td style="text-align:left;"> 98.9 (99.2) </td>
-   <td style="text-align:left;"> 7.1 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> H </td>
-   <td style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(72, 41, 121, 1) !important;"> 40-2.9 </td>
-   <td style="text-align:left;"> 21801 </td>
-   <td style="text-align:left;"> 1.8 </td>
-   <td style="text-align:left;"> 8.8 (1.8) </td>
-   <td style="text-align:left;"> 95.5 (98.6) </td>
-   <td style="text-align:left;"> 9.4 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> I </td>
-   <td style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(68, 1, 84, 1) !important;"> 40-3.0 </td>
-   <td style="text-align:left;"> 20415 </td>
-   <td style="text-align:left;"> 2.1 </td>
-   <td style="text-align:left;"> 9.0 (1.9) </td>
-   <td style="text-align:left;"> 98.8 (99.2) </td>
-   <td style="text-align:left;"> 8.6 </td>
-  </tr>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(187, 223, 39, 1) !important;">40-2.05</td>
+<td style="text-align: left;">62401</td>
+<td style="text-align: left;">2.1</td>
+<td style="text-align: left;">16.4 (2.8)</td>
+<td style="text-align: left;">99.0 (99.3)</td>
+<td style="text-align: left;">4.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(114, 208, 86, 1) !important;">40-2.1</td>
+<td style="text-align: left;">56543</td>
+<td style="text-align: left;">1.8</td>
+<td style="text-align: left;">13.1 (1.9)</td>
+<td style="text-align: left;">96.1 (96.9)</td>
+<td style="text-align: left;">5.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(56, 185, 119, 1) !important;">40-2.1</td>
+<td style="text-align: left;">58334</td>
+<td style="text-align: left;">1.8</td>
+<td style="text-align: left;">13.8 (1.6)</td>
+<td style="text-align: left;">99.0 (99.2)</td>
+<td style="text-align: left;">5.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(31, 159, 136, 1) !important;">40-2.3</td>
+<td style="text-align: left;">44671</td>
+<td style="text-align: left;">2.1</td>
+<td style="text-align: left;">14.2 (1.9)</td>
+<td style="text-align: left;">99.1 (99.4)</td>
+<td style="text-align: left;">5.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">E</td>
+<td style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(37, 132, 142, 1) !important;">40-2.5</td>
+<td style="text-align: left;">34910</td>
+<td style="text-align: left;">2.1</td>
+<td style="text-align: left;">13.4 (1.8)</td>
+<td style="text-align: left;">99.0 (99.4)</td>
+<td style="text-align: left;">5.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">F</td>
+<td style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(48, 105, 142, 1) !important;">40-2.65</td>
+<td style="text-align: left;">29417</td>
+<td style="text-align: left;">2.1</td>
+<td style="text-align: left;">12.2 (1.7)</td>
+<td style="text-align: left;">99.0 (99.1)</td>
+<td style="text-align: left;">6.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">G</td>
+<td style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(62, 75, 138, 1) !important;">40-2.8</td>
+<td style="text-align: left;">25004</td>
+<td style="text-align: left;">2.1</td>
+<td style="text-align: left;">10.7 (1.7)</td>
+<td style="text-align: left;">98.9 (99.2)</td>
+<td style="text-align: left;">7.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">H</td>
+<td style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(72, 41, 121, 1) !important;">40-2.9</td>
+<td style="text-align: left;">21801</td>
+<td style="text-align: left;">1.8</td>
+<td style="text-align: left;">8.8 (1.8)</td>
+<td style="text-align: left;">95.5 (98.6)</td>
+<td style="text-align: left;">9.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I</td>
+<td style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(68, 1, 84, 1) !important;">40-3.0</td>
+<td style="text-align: left;">20415</td>
+<td style="text-align: left;">2.1</td>
+<td style="text-align: left;">9.0 (1.9)</td>
+<td style="text-align: left;">98.8 (99.2)</td>
+<td style="text-align: left;">8.6</td>
+</tr>
 </tbody>
 </table>
 </div>
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>knitr<span class="sc">::</span><span class="fu">asis_output</span>(<span class="st">'\U212B'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>knitr<span class="sc">::</span><span class="fu">asis_output</span>(<span class="st">'\U212B'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <p>Å</p>
 </div>
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">#knitr::options("kableExtra.html.bsTable" = T)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">#knitr::options("kableExtra.html.bsTable" = T)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section><section id="aquí-la-tabla-anteriór-pero-sólo-pegando-el-código-generado-por-table-generator." class="level2"><h2 class="anchored" data-anchor-id="aquí-la-tabla-anteriór-pero-sólo-pegando-el-código-generado-por-table-generator.">Aquí la tabla anteriór pero sólo pegando el código generado por table generator.</h2>
@@ -769,7 +779,7 @@ chr (10): Dataset, A, B, C, D, E, F, G, H, I
 </tbody>
 </table></section><section id="es-más-limpio-importar-los-datos." class="level2"><h2 class="anchored" data-anchor-id="es-más-limpio-importar-los-datos.">Es más limpio importar los datos.</h2>
 <div class="cell" data-tbl-cap="Tabla 1 de [@Weik2000].">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">#Es más limpio importar los datos.</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">#Es más limpio importar los datos.</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a><span class="fu">library</span>(readr)</span>
 <span id="cb8-3"><a href="#cb8-3"></a>tbl1_weik2000 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Table1_Weik2000.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stderr">
@@ -782,7 +792,7 @@ chr (10): Dataset, A, B, C, D, E, F, G, H, I
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 </div>
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">library</span>(knitr)</span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">library</span>(knitr)</span>
 <span id="cb10-2"><a href="#cb10-2"></a><span class="fu">library</span>(tidyr)</span>
 <span id="cb10-3"><a href="#cb10-3"></a><span class="fu">library</span>(kableExtra)</span>
 <span id="cb10-4"><a href="#cb10-4"></a>tab <span class="ot">&lt;-</span> <span class="fu">kbl</span>(tbl1_weik2000) <span class="sc">%&gt;%</span></span>
@@ -1028,35 +1038,38 @@ Completeness (%)
 <div class="rectangle absolute center small" data-top="15%" data-left="4%" width="350">
 
 </div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {{markdown}} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href="#cb11-1"></a>```{mermaid}</span>
-<span id="cb11-2"><a href="#cb11-2"></a>%%| label: fig-mermaid</span>
-<span id="cb11-3"><a href="#cb11-3"></a>%%| fig-width: 8</span>
-<span id="cb11-4"><a href="#cb11-4"></a>%%{</span>
-<span id="cb11-5"><a href="#cb11-5"></a>  init: {</span>
-<span id="cb11-6"><a href="#cb11-6"></a>    'theme': 'base',</span>
-<span id="cb11-7"><a href="#cb11-7"></a>    'themeVariables': {</span>
-<span id="cb11-8"><a href="#cb11-8"></a>      'primaryColor': '#bdbdbd',</span>
-<span id="cb11-9"><a href="#cb11-9"></a>      'primaryTextColor': '#000000',</span>
-<span id="cb11-10"><a href="#cb11-10"></a>      'primaryBorderColor': '#7C0000',</span>
-<span id="cb11-11"><a href="#cb11-11"></a>      'lineColor': '#980043',</span>
-<span id="cb11-12"><a href="#cb11-12"></a>      'secondaryColor': '#bdbdbd',</span>
-<span id="cb11-13"><a href="#cb11-13"></a>      'tertiaryColor': '#fff'</span>
-<span id="cb11-14"><a href="#cb11-14"></a>    }</span>
-<span id="cb11-15"><a href="#cb11-15"></a>  }</span>
-<span id="cb11-16"><a href="#cb11-16"></a>}%%</span>
-<span id="cb11-17"><a href="#cb11-17"></a>flowchart TD</span>
-<span id="cb11-18"><a href="#cb11-18"></a> A(INICIO) --&gt;|Seleccionar| C(otra cosa &lt;br&gt; con salto de linea)</span>
-<span id="cb11-19"><a href="#cb11-19"></a> C --&gt; B(Hacer algo)</span>
-<span id="cb11-20"><a href="#cb11-20"></a> B --&gt; D(otra cosa )</span>
-<span id="cb11-21"><a href="#cb11-21"></a> D --&gt; E(Salto de línea &lt;br&gt; más cosas interesantes )</span>
-<span id="cb11-22"><a href="#cb11-22"></a> E --&gt; F( Terminar para &lt;br&gt; ir concluyendo)</span>
-<span id="cb11-23"><a href="#cb11-23"></a> F --&gt; id1&gt;Realizar un análisis comparativo]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell" data-fig-width="8">
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1"></a><span class="in">```{markdown}</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="in">```{mermaid}</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="in">%%| label: fig-mermaid</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="in">%%| fig-width: 8</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="in">%%{</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="in">  init: {</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="in">    'theme': 'base',</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a><span class="in">    'themeVariables': {</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a><span class="in">      'primaryColor': '#bdbdbd',</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a><span class="in">      'primaryTextColor': '#000000',</span></span>
+<span id="cb11-11"><a href="#cb11-11"></a><span class="in">      'primaryBorderColor': '#7C0000',</span></span>
+<span id="cb11-12"><a href="#cb11-12"></a><span class="in">      'lineColor': '#980043',</span></span>
+<span id="cb11-13"><a href="#cb11-13"></a><span class="in">      'secondaryColor': '#bdbdbd',</span></span>
+<span id="cb11-14"><a href="#cb11-14"></a><span class="in">      'tertiaryColor': '#fff'</span></span>
+<span id="cb11-15"><a href="#cb11-15"></a><span class="in">    }</span></span>
+<span id="cb11-16"><a href="#cb11-16"></a><span class="in">  }</span></span>
+<span id="cb11-17"><a href="#cb11-17"></a><span class="in">}%%</span></span>
+<span id="cb11-18"><a href="#cb11-18"></a><span class="in">flowchart TD</span></span>
+<span id="cb11-19"><a href="#cb11-19"></a><span class="in"> A(INICIO) --&gt;|Seleccionar| C(otra cosa &lt;br&gt; con salto de linea)</span></span>
+<span id="cb11-20"><a href="#cb11-20"></a><span class="in"> C --&gt; B(Hacer algo)</span></span>
+<span id="cb11-21"><a href="#cb11-21"></a><span class="in"> B --&gt; D(otra cosa )</span></span>
+<span id="cb11-22"><a href="#cb11-22"></a><span class="in"> D --&gt; E(Salto de línea &lt;br&gt; más cosas interesantes )</span></span>
+<span id="cb11-23"><a href="#cb11-23"></a><span class="in"> E --&gt; F( Terminar para &lt;br&gt; ir concluyendo)</span></span>
+<span id="cb11-24"><a href="#cb11-24"></a><span class="in"> F --&gt; id1&gt;Realizar un análisis comparativo]</span></span>
+<span id="cb11-25"><a href="#cb11-25"></a></span>
+<span id="cb11-26"><a href="#cb11-26"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-fig-width="8" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p>
-</p>
-<pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">%%{
+<div id="fig-mermaid" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-mermaid">%%{
   init: {
     'theme': 'base',
     'themeVariables': {
@@ -1078,73 +1091,72 @@ flowchart TD
  F --&gt; id1&gt;Realizar un análisis comparativo]
 
 </pre>
-<div id="mermaid-tooltip-1" class="mermaidTooltip">
-
 </div>
-
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: <strong>?(caption)</strong></figcaption><p></p>
-</figure>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption></figure>
 </div>
 </div>
 </div>
 </section><section id="figuras" class="level2"><h2 class="anchored" data-anchor-id="figuras">Figuras</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {{markdown}} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a href="#cb12-1"></a></span>
-<span id="cb12-2"><a href="#cb12-2"></a>::: {layout-nrow="2" layout-ncol="1" fig-align="center" width="100%"}</span>
-<span id="cb12-3"><a href="#cb12-3"></a>![](Alguna figura.png)</span>
-<span id="cb12-4"><a href="#cb12-4"></a></span>
-<span id="cb12-5"><a href="#cb12-5"></a>![](Otra figura.png)</span>
-<span id="cb12-6"><a href="#cb12-6"></a></span>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1"></a><span class="in">```{markdown}</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="in">::: {layout-nrow="2" layout-ncol="1" fig-align="center" width="100%"}</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="in">![](Alguna figura.png)</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="in">![](Otra figura.png)</span></span>
 <span id="cb12-7"><a href="#cb12-7"></a></span>
-<span id="cb12-8"><a href="#cb12-8"></a>Modificadas de [@Weik2000].</span>
-<span id="cb12-9"><a href="#cb12-9"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-8"><a href="#cb12-8"></a></span>
+<span id="cb12-9"><a href="#cb12-9"></a><span class="in">Modificadas de [@Weik2000].</span></span>
+<span id="cb12-10"><a href="#cb12-10"></a><span class="in">:::</span></span>
+<span id="cb12-11"><a href="#cb12-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section><section id="video" class="level2"><h2 class="anchored" data-anchor-id="video">video</h2>
-<div id="fig-elephant" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><iframe width="560" height="315" src="https://www.youtube.com/embed/SNggmeilXDQ">
+<div id="fig-elephant" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-elephant-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SNggmeilXDQ">
 </iframe>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Elephant</figcaption><p></p>
-</figure>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elephant-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Elephant
+</figcaption></figure>
 </div>
 </section><section id="radiólisis-del-agua" class="level2"><h2 class="anchored" data-anchor-id="radiólisis-del-agua">Radiólisis del agua</h2>
 <p><br><span class="absolute small" data-top="17%" data-left="33%" width="350"><em>rayos X</em>⚡</span></p>
 <div class="center big">
 <p>H<sub>2</sub>O &nbsp;⟶&nbsp;&nbsp; H<sub>2</sub>O<sup>+●</sup>&nbsp;+&nbsp; <em>e</em>&nbsp;<sup>⎻</sup> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)</p>
 </div>
-<div class="incremental">
+<p>. . .</p>
 <p><span class="absolute small" data-top="25.8%" data-left="33%" width="350"><em>rayos X</em>⚡</span></p>
 <div class="center big">
 <p>H<sub>2</sub>O&nbsp; ⟶&nbsp; H<sub>2</sub>O<sup>*</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)</p>
 </div>
-</div>
-<div class="incremental">
+<p>. . .</p>
 <div class="center big">
 <p>H<sub>2</sub>O<sup>+●</sup>&nbsp;+&nbsp; H<sub>2</sub>O⟶ H<sub>3</sub>O<sup>*</sup>&nbsp;+&nbsp;OH<sup>+●</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)</p>
 </div>
-</div>
-<div class="incremental">
+<p>. . .</p>
 <div class="center big">
 <p><em>e</em>&nbsp;<em>⎻</em>&nbsp;+ &nbsp; <em>n</em>H<sub>2</sub>O⟶ <em>e</em>&nbsp;<em>⎻<sub>solv.</sub></em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;(4)</p>
 </div>
-</div>
-<div class="incremental">
+<p>. . .</p>
 <div class="center big">
 <p>H<sub>2</sub>O*&nbsp;+&nbsp; H<sub>2</sub>O⟶ H<sup>●</sup>&nbsp;+&nbsp;OH<sup>●</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (5)</p>
 </div>
-</div>
-<div class="incremental">
+<p>. . .</p>
 <div class="center big">
 <p><em>e⎻<sub>solv.</sub></em> &nbsp;+ &nbsp; H<sup>+●</sup>⟶ H<sub>3</sub>O<sup>*</sup>&nbsp;+&nbsp;OH<sup>+●</sup>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;(6)</p>
 </div>
 <div class="center big">
 <p>Tomado de <span class="citation" data-cites="Garman2010">@Garman2010</span></p>
 </div>
-</div>
 </section><section id="objetivos" class="level2"><h2 class="anchored" data-anchor-id="objetivos">Objetivos</h2>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Objetivo
 </div>
 </div>
@@ -1155,306 +1167,309 @@ Objetivo
 </div>
 </div>
 </section><section id="customs" class="level2"><h2 class="anchored" data-anchor-id="customs">Customs</h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource {{markdown}} number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a href="#cb13-1"></a></span>
-<span id="cb13-2"><a href="#cb13-2"></a>/*-- scss:rules --*/</span>
-<span id="cb13-3"><a href="#cb13-3"></a></span>
-<span id="cb13-4"><a href="#cb13-4"></a>.reveal a {</span>
-<span id="cb13-5"><a href="#cb13-5"></a>    line-height: 1.5em;</span>
-<span id="cb13-6"><a href="#cb13-6"></a>    color: #eb811b;</span>
-<span id="cb13-7"><a href="#cb13-7"></a>    font-weight: 300;</span>
-<span id="cb13-8"><a href="#cb13-8"></a>}</span>
-<span id="cb13-9"><a href="#cb13-9"></a></span>
-<span id="cb13-10"><a href="#cb13-10"></a>.reveal .footer a {</span>
-<span id="cb13-11"><a href="#cb13-11"></a>    color: #eb811b !important;</span>
-<span id="cb13-12"><a href="#cb13-12"></a>}</span>
-<span id="cb13-13"><a href="#cb13-13"></a></span>
-<span id="cb13-14"><a href="#cb13-14"></a>.reveal p {</span>
-<span id="cb13-15"><a href="#cb13-15"></a>    font-weight: 300;</span>
-<span id="cb13-16"><a href="#cb13-16"></a>}</span>
-<span id="cb13-17"><a href="#cb13-17"></a></span>
-<span id="cb13-18"><a href="#cb13-18"></a>.reveal .slide ul li,</span>
-<span id="cb13-19"><a href="#cb13-19"></a>.reveal .slide ol li {</span>
-<span id="cb13-20"><a href="#cb13-20"></a>    font-weight: 300;</span>
-<span id="cb13-21"><a href="#cb13-21"></a>}</span>
-<span id="cb13-22"><a href="#cb13-22"></a></span>
-<span id="cb13-23"><a href="#cb13-23"></a>// maximum height of code blocks before scrolling is used</span>
-<span id="cb13-24"><a href="#cb13-24"></a>.reveal pre.sourceCode code {</span>
-<span id="cb13-25"><a href="#cb13-25"></a>    max-height: 700px; // default 500</span>
-<span id="cb13-26"><a href="#cb13-26"></a>}</span>
-<span id="cb13-27"><a href="#cb13-27"></a></span>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1"></a><span class="in">```{markdown}</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="in">/*-- scss:rules --*/</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a></span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="in">.reveal a {</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a><span class="in">    line-height: 1.5em;</span></span>
+<span id="cb13-7"><a href="#cb13-7"></a><span class="in">    color: #eb811b;</span></span>
+<span id="cb13-8"><a href="#cb13-8"></a><span class="in">    font-weight: 300;</span></span>
+<span id="cb13-9"><a href="#cb13-9"></a><span class="in">}</span></span>
+<span id="cb13-10"><a href="#cb13-10"></a></span>
+<span id="cb13-11"><a href="#cb13-11"></a><span class="in">.reveal .footer a {</span></span>
+<span id="cb13-12"><a href="#cb13-12"></a><span class="in">    color: #eb811b !important;</span></span>
+<span id="cb13-13"><a href="#cb13-13"></a><span class="in">}</span></span>
+<span id="cb13-14"><a href="#cb13-14"></a></span>
+<span id="cb13-15"><a href="#cb13-15"></a><span class="in">.reveal p {</span></span>
+<span id="cb13-16"><a href="#cb13-16"></a><span class="in">    font-weight: 300;</span></span>
+<span id="cb13-17"><a href="#cb13-17"></a><span class="in">}</span></span>
+<span id="cb13-18"><a href="#cb13-18"></a></span>
+<span id="cb13-19"><a href="#cb13-19"></a><span class="in">.reveal .slide ul li,</span></span>
+<span id="cb13-20"><a href="#cb13-20"></a><span class="in">.reveal .slide ol li {</span></span>
+<span id="cb13-21"><a href="#cb13-21"></a><span class="in">    font-weight: 300;</span></span>
+<span id="cb13-22"><a href="#cb13-22"></a><span class="in">}</span></span>
+<span id="cb13-23"><a href="#cb13-23"></a></span>
+<span id="cb13-24"><a href="#cb13-24"></a><span class="in">// maximum height of code blocks before scrolling is used</span></span>
+<span id="cb13-25"><a href="#cb13-25"></a><span class="in">.reveal pre.sourceCode code {</span></span>
+<span id="cb13-26"><a href="#cb13-26"></a><span class="in">    max-height: 700px; // default 500</span></span>
+<span id="cb13-27"><a href="#cb13-27"></a><span class="in">}</span></span>
 <span id="cb13-28"><a href="#cb13-28"></a></span>
-<span id="cb13-29"><a href="#cb13-29"></a>// Aqui modificas el subtitulo que es tu nombre //</span>
-<span id="cb13-30"><a href="#cb13-30"></a>p.subtitle {</span>
-<span id="cb13-31"><a href="#cb13-31"></a>    // margin-top: -10px;</span>
-<span id="cb13-32"><a href="#cb13-32"></a>    // padding-bottom: -20px;</span>
-<span id="cb13-33"><a href="#cb13-33"></a>    color: #1a292c;</span>
-<span id="cb13-34"><a href="#cb13-34"></a>    text-shadow: none;</span>
-<span id="cb13-35"><a href="#cb13-35"></a>    font-weight: 300;</span>
-<span id="cb13-36"><a href="#cb13-36"></a>    font-size: 40px;</span>
-<span id="cb13-37"><a href="#cb13-37"></a>    text-align: left; //puede ser center o right</span>
-<span id="cb13-38"><a href="#cb13-38"></a>    margin-left: 15px;</span>
-<span id="cb13-39"><a href="#cb13-39"></a>}</span>
-<span id="cb13-40"><a href="#cb13-40"></a>p.author {</span>
-<span id="cb13-41"><a href="#cb13-41"></a>    color: #1a292c;</span>
-<span id="cb13-42"><a href="#cb13-42"></a>    text-shadow: none;</span>
-<span id="cb13-43"><a href="#cb13-43"></a>    font-weight: 300;</span>
-<span id="cb13-44"><a href="#cb13-44"></a>    font-size: 30px;</span>
-<span id="cb13-45"><a href="#cb13-45"></a>    text-align: left;</span>
-<span id="cb13-46"><a href="#cb13-46"></a>    margin-left: 15px;</span>
-<span id="cb13-47"><a href="#cb13-47"></a>    margin-bottom: -10px;</span>
-<span id="cb13-48"><a href="#cb13-48"></a>    margin-top: 10px;</span>
-<span id="cb13-49"><a href="#cb13-49"></a>}</span>
-<span id="cb13-50"><a href="#cb13-50"></a></span>
-<span id="cb13-51"><a href="#cb13-51"></a>p.date {</span>
-<span id="cb13-52"><a href="#cb13-52"></a>    color: #1a292c;</span>
-<span id="cb13-53"><a href="#cb13-53"></a>    text-shadow: none;</span>
-<span id="cb13-54"><a href="#cb13-54"></a>    font-weight: 300;</span>
-<span id="cb13-55"><a href="#cb13-55"></a>    font-size: 30px;</span>
-<span id="cb13-56"><a href="#cb13-56"></a>    text-align: center;</span>
-<span id="cb13-57"><a href="#cb13-57"></a>    margin-left: 15px;</span>
-<span id="cb13-58"><a href="#cb13-58"></a>    // margin-bottom: -30px;</span>
-<span id="cb13-59"><a href="#cb13-59"></a>}</span>
-<span id="cb13-60"><a href="#cb13-60"></a></span>
-<span id="cb13-61"><a href="#cb13-61"></a>p.subtitle:after {</span>
-<span id="cb13-62"><a href="#cb13-62"></a>    content: "";</span>
-<span id="cb13-63"><a href="#cb13-63"></a>    display: block;</span>
-<span id="cb13-64"><a href="#cb13-64"></a>    border: none;</span>
-<span id="cb13-65"><a href="#cb13-65"></a>    background-color: #eb811b;</span>
-<span id="cb13-66"><a href="#cb13-66"></a>    color: #eb811b;</span>
-<span id="cb13-67"><a href="#cb13-67"></a>    height: 1px;</span>
-<span id="cb13-68"><a href="#cb13-68"></a>    margin: 25px 0 25px;</span>
-<span id="cb13-69"><a href="#cb13-69"></a>}</span>
-<span id="cb13-70"><a href="#cb13-70"></a></span>
-<span id="cb13-71"><a href="#cb13-71"></a>// Section break slide</span>
-<span id="cb13-72"><a href="#cb13-72"></a>hr,</span>
-<span id="cb13-73"><a href="#cb13-73"></a>h1::after {</span>
-<span id="cb13-74"><a href="#cb13-74"></a>    content: "";</span>
-<span id="cb13-75"><a href="#cb13-75"></a>    display: block;</span>
-<span id="cb13-76"><a href="#cb13-76"></a>    border: none;</span>
-<span id="cb13-77"><a href="#cb13-77"></a>    background-color: #eb811b;</span>
-<span id="cb13-78"><a href="#cb13-78"></a>    color: #eb811b;</span>
-<span id="cb13-79"><a href="#cb13-79"></a>    height: 1px;</span>
-<span id="cb13-80"><a href="#cb13-80"></a>    margin: 1em 10px 0 10px;</span>
-<span id="cb13-81"><a href="#cb13-81"></a>}</span>
-<span id="cb13-82"><a href="#cb13-82"></a></span>
-<span id="cb13-83"><a href="#cb13-83"></a>// Override h1 style for title slide (remove section break slide style)</span>
-<span id="cb13-84"><a href="#cb13-84"></a>hr,</span>
-<span id="cb13-85"><a href="#cb13-85"></a>h1.title::after {</span>
-<span id="cb13-86"><a href="#cb13-86"></a>    content: "";</span>
-<span id="cb13-87"><a href="#cb13-87"></a>    display: block;</span>
-<span id="cb13-88"><a href="#cb13-88"></a>    border: none;</span>
-<span id="cb13-89"><a href="#cb13-89"></a>    background-color: transparent !important;</span>
-<span id="cb13-90"><a href="#cb13-90"></a>    color: transparent !important;</span>
-<span id="cb13-91"><a href="#cb13-91"></a>    height: 0px;</span>
-<span id="cb13-92"><a href="#cb13-92"></a>    margin: 0px !important;</span>
-<span id="cb13-93"><a href="#cb13-93"></a>}</span>
-<span id="cb13-94"><a href="#cb13-94"></a></span>
-<span id="cb13-95"><a href="#cb13-95"></a>h2::after.title {</span>
-<span id="cb13-96"><a href="#cb13-96"></a>    margin: 0px 0px 0px 0;</span>
-<span id="cb13-97"><a href="#cb13-97"></a>}</span>
-<span id="cb13-98"><a href="#cb13-98"></a></span>
-<span id="cb13-99"><a href="#cb13-99"></a>//Aquí moficas el número de páginas//</span>
-<span id="cb13-100"><a href="#cb13-100"></a>.reveal .slide-number a {</span>
-<span id="cb13-101"><a href="#cb13-101"></a>    font-size: 110%;</span>
-<span id="cb13-102"><a href="#cb13-102"></a>    background-color: #fafafa;</span>
-<span id="cb13-103"><a href="#cb13-103"></a>    border-radius: 12px;</span>
-<span id="cb13-104"><a href="#cb13-104"></a>    position: margin-left;</span>
-<span id="cb13-105"><a href="#cb13-105"></a>    padding: 5px;</span>
-<span id="cb13-106"><a href="#cb13-106"></a>}</span>
-<span id="cb13-107"><a href="#cb13-107"></a></span>
-<span id="cb13-108"><a href="#cb13-108"></a>// aquí es donde modificas la parte del título princial//</span>
-<span id="cb13-109"><a href="#cb13-109"></a>h1.title {</span>
-<span id="cb13-110"><a href="#cb13-110"></a>    color: #ffeda0;</span>
-<span id="cb13-111"><a href="#cb13-111"></a>    background-color: #23373b;</span>
-<span id="cb13-112"><a href="#cb13-112"></a>    font-size: 60px;</span>
-<span id="cb13-113"><a href="#cb13-113"></a>    text-shadow: none;</span>
-<span id="cb13-114"><a href="#cb13-114"></a>    font-weight: 400;</span>
-<span id="cb13-115"><a href="#cb13-115"></a>    text-align: center;</span>
-<span id="cb13-116"><a href="#cb13-116"></a>    margin-left: 15px;</span>
-<span id="cb13-117"><a href="#cb13-117"></a>    padding-top: 10px;</span>
-<span id="cb13-118"><a href="#cb13-118"></a>}</span>
-<span id="cb13-119"><a href="#cb13-119"></a>.reveal h2 {</span>
-<span id="cb13-120"><a href="#cb13-120"></a>    background-color:#d9d9d9;</span>
-<span id="cb13-121"><a href="#cb13-121"></a>    padding: 5px 0px 5px 10px;</span>
-<span id="cb13-122"><a href="#cb13-122"></a>    color: #800026;</span>
-<span id="cb13-123"><a href="#cb13-123"></a>    border-radius: 12px;</span>
-<span id="cb13-124"><a href="#cb13-124"></a>}</span>
-<span id="cb13-125"><a href="#cb13-125"></a>.middle {</span>
-<span id="cb13-126"><a href="#cb13-126"></a>  vertical-align: middle;</span>
-<span id="cb13-127"><a href="#cb13-127"></a>}</span>
-<span id="cb13-128"><a href="#cb13-128"></a></span>
-<span id="cb13-129"><a href="#cb13-129"></a>.center img {</span>
-<span id="cb13-130"><a href="#cb13-130"></a>  display: block;</span>
-<span id="cb13-131"><a href="#cb13-131"></a>  margin-left: auto;</span>
-<span id="cb13-132"><a href="#cb13-132"></a>  margin-right: auto;</span>
-<span id="cb13-133"><a href="#cb13-133"></a>}</span>
-<span id="cb13-134"><a href="#cb13-134"></a></span>
-<span id="cb13-135"><a href="#cb13-135"></a>.center {</span>
-<span id="cb13-136"><a href="#cb13-136"></a>  text-align: center;</span>
-<span id="cb13-137"><a href="#cb13-137"></a>}</span>
-<span id="cb13-138"><a href="#cb13-138"></a></span>
-<span id="cb13-139"><a href="#cb13-139"></a>.medium {</span>
-<span id="cb13-140"><a href="#cb13-140"></a>  font-size: 0.85em;</span>
-<span id="cb13-141"><a href="#cb13-141"></a>}</span>
-<span id="cb13-142"><a href="#cb13-142"></a></span>
-<span id="cb13-143"><a href="#cb13-143"></a>.small {</span>
-<span id="cb13-144"><a href="#cb13-144"></a>  font-size: 0.75em;</span>
-<span id="cb13-145"><a href="#cb13-145"></a>}</span>
-<span id="cb13-146"><a href="#cb13-146"></a></span>
-<span id="cb13-147"><a href="#cb13-147"></a>.molstar-app {</span>
-<span id="cb13-148"><a href="#cb13-148"></a>  position: relative;</span>
-<span id="cb13-149"><a href="#cb13-149"></a>  width: 100%;</span>
-<span id="cb13-150"><a href="#cb13-150"></a>  height: 500px;</span>
-<span id="cb13-151"><a href="#cb13-151"></a>  padding-bottom: 56.25%;</span>
-<span id="cb13-152"><a href="#cb13-152"></a>}</span>
-<span id="cb13-153"><a href="#cb13-153"></a></span>
-<span id="cb13-154"><a href="#cb13-154"></a>.reveal .progress {</span>
-<span id="cb13-155"><a href="#cb13-155"></a>    color: gray;</span>
-<span id="cb13-156"><a href="#cb13-156"></a>  height: 8px;</span>
-<span id="cb13-157"><a href="#cb13-157"></a>}</span>
-<span id="cb13-158"><a href="#cb13-158"></a></span>
-<span id="cb13-159"><a href="#cb13-159"></a>iframe {</span>
-<span id="cb13-160"><a href="#cb13-160"></a>    display: block;</span>
-<span id="cb13-161"><a href="#cb13-161"></a>    margin-right: auto;</span>
-<span id="cb13-162"><a href="#cb13-162"></a>    margin-left: auto;</span>
-<span id="cb13-163"><a href="#cb13-163"></a>}</span>
-<span id="cb13-164"><a href="#cb13-164"></a></span>
-<span id="cb13-165"><a href="#cb13-165"></a>/*********************************************</span>
-<span id="cb13-166"><a href="#cb13-166"></a> * SLIDES</span>
-<span id="cb13-167"><a href="#cb13-167"></a> *********************************************/</span>
-<span id="cb13-168"><a href="#cb13-168"></a></span>
-<span id="cb13-169"><a href="#cb13-169"></a>.reveal {</span>
-<span id="cb13-170"><a href="#cb13-170"></a>    position: relative;</span>
-<span id="cb13-171"><a href="#cb13-171"></a>    width: 100%;</span>
-<span id="cb13-172"><a href="#cb13-172"></a>    height: 100%;</span>
-<span id="cb13-173"><a href="#cb13-173"></a>    overflow: hidden;</span>
-<span id="cb13-174"><a href="#cb13-174"></a>    touch-action: pinch-zoom;</span>
-<span id="cb13-175"><a href="#cb13-175"></a>}</span>
-<span id="cb13-176"><a href="#cb13-176"></a></span>
-<span id="cb13-177"><a href="#cb13-177"></a>.box {</span>
-<span id="cb13-178"><a href="#cb13-178"></a>  border-radius: 10px;</span>
-<span id="cb13-179"><a href="#cb13-179"></a>  background-color: yellow;</span>
-<span id="cb13-180"><a href="#cb13-180"></a>  padding: 1em;</span>
-<span id="cb13-181"><a href="#cb13-181"></a>  text-align: left;</span>
-<span id="cb13-182"><a href="#cb13-182"></a>  vertical-align: center;</span>
-<span id="cb13-183"><a href="#cb13-183"></a>  border: 5px solid $presentation-heading-color;</span>
-<span id="cb13-184"><a href="#cb13-184"></a>}</span>
-<span id="cb13-185"><a href="#cb13-185"></a></span>
-<span id="cb13-186"><a href="#cb13-186"></a>.blackbox {</span>
-<span id="cb13-187"><a href="#cb13-187"></a>  padding: 1em;</span>
-<span id="cb13-188"><a href="#cb13-188"></a>  position: relative;</span>
-<span id="cb13-189"><a href="#cb13-189"></a>  background: white;</span>
-<span id="cb13-190"><a href="#cb13-190"></a>  color: black;</span>
-<span id="cb13-191"><a href="#cb13-191"></a>  border: 2px solid orange;</span>
-<span id="cb13-192"><a href="#cb13-192"></a>  border-radius: 10px;</span>
-<span id="cb13-193"><a href="#cb13-193"></a>  </span>
-<span id="cb13-194"><a href="#cb13-194"></a>}</span>
-<span id="cb13-195"><a href="#cb13-195"></a></span>
-<span id="cb13-196"><a href="#cb13-196"></a>.rectangle {</span>
-<span id="cb13-197"><a href="#cb13-197"></a>  padding: 1em;</span>
-<span id="cb13-198"><a href="#cb13-198"></a>  position: relative;</span>
-<span id="cb13-199"><a href="#cb13-199"></a>  background: none;</span>
-<span id="cb13-200"><a href="#cb13-200"></a>  color: black;</span>
-<span id="cb13-201"><a href="#cb13-201"></a>  border: 2px solid orange;</span>
-<span id="cb13-202"><a href="#cb13-202"></a>  border-radius: 10px;</span>
-<span id="cb13-203"><a href="#cb13-203"></a>  </span>
-<span id="cb13-204"><a href="#cb13-204"></a>}</span>
-<span id="cb13-205"><a href="#cb13-205"></a>/*-- scss:defaults --*/</span>
-<span id="cb13-206"><a href="#cb13-206"></a></span>
-<span id="cb13-207"><a href="#cb13-207"></a>// fonts</span>
-<span id="cb13-208"><a href="#cb13-208"></a>@import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,700,700i);</span>
-<span id="cb13-209"><a href="#cb13-209"></a>@import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);</span>
-<span id="cb13-210"><a href="#cb13-210"></a>@import url("https://fonts.googleapis.com/css?family=Roboto+Mono|JetBrains+Mono&amp;display=swap");</span>
-<span id="cb13-211"><a href="#cb13-211"></a>@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap");</span>
-<span id="cb13-212"><a href="#cb13-212"></a></span>
-<span id="cb13-213"><a href="#cb13-213"></a>$font-family-sans-serif: "Roboto", "Fira Sans", "Droid Serif", serif !default;</span>
-<span id="cb13-214"><a href="#cb13-214"></a>$font-family-monospace: "JetBrains Mono", "Fira Code", monospace;</span>
-<span id="cb13-215"><a href="#cb13-215"></a>/*$font-family-sans-serif: "  Crimson Text  ", sans-serif;*/</span>
-<span id="cb13-216"><a href="#cb13-216"></a>/*$presentation-heading-color: #081d58 !default;*/</span>
-<span id="cb13-217"><a href="#cb13-217"></a>$presentation-title-slide-text-align: "center";</span>
-<span id="cb13-218"><a href="#cb13-218"></a>$presentation-h2-slide-text-align: "center";</span>
-<span id="cb13-219"><a href="#cb13-219"></a>$code-block-font-size: 0.6em;</span>
-<span id="cb13-220"><a href="#cb13-220"></a>$code-color: #5f5f5f;</span>
-<span id="cb13-221"><a href="#cb13-221"></a>$presentation-h2-font-size: 1.4em;</span>
-<span id="cb13-222"><a href="#cb13-222"></a>$presentation-font-size-root: 32px;</span>
-<span id="cb13-223"><a href="#cb13-223"></a>$presentation-line-height: 1.5em;</span>
-<span id="cb13-224"><a href="#cb13-224"></a>$presentation-heading-font-weight: 400;</span>
-<span id="cb13-225"><a href="#cb13-225"></a></span>
+<span id="cb13-29"><a href="#cb13-29"></a></span>
+<span id="cb13-30"><a href="#cb13-30"></a><span class="in">// Aqui modificas el subtitulo que es tu nombre //</span></span>
+<span id="cb13-31"><a href="#cb13-31"></a><span class="in">p.subtitle {</span></span>
+<span id="cb13-32"><a href="#cb13-32"></a><span class="in">    // margin-top: -10px;</span></span>
+<span id="cb13-33"><a href="#cb13-33"></a><span class="in">    // padding-bottom: -20px;</span></span>
+<span id="cb13-34"><a href="#cb13-34"></a><span class="in">    color: #1a292c;</span></span>
+<span id="cb13-35"><a href="#cb13-35"></a><span class="in">    text-shadow: none;</span></span>
+<span id="cb13-36"><a href="#cb13-36"></a><span class="in">    font-weight: 300;</span></span>
+<span id="cb13-37"><a href="#cb13-37"></a><span class="in">    font-size: 40px;</span></span>
+<span id="cb13-38"><a href="#cb13-38"></a><span class="in">    text-align: left; //puede ser center o right</span></span>
+<span id="cb13-39"><a href="#cb13-39"></a><span class="in">    margin-left: 15px;</span></span>
+<span id="cb13-40"><a href="#cb13-40"></a><span class="in">}</span></span>
+<span id="cb13-41"><a href="#cb13-41"></a><span class="in">p.author {</span></span>
+<span id="cb13-42"><a href="#cb13-42"></a><span class="in">    color: #1a292c;</span></span>
+<span id="cb13-43"><a href="#cb13-43"></a><span class="in">    text-shadow: none;</span></span>
+<span id="cb13-44"><a href="#cb13-44"></a><span class="in">    font-weight: 300;</span></span>
+<span id="cb13-45"><a href="#cb13-45"></a><span class="in">    font-size: 30px;</span></span>
+<span id="cb13-46"><a href="#cb13-46"></a><span class="in">    text-align: left;</span></span>
+<span id="cb13-47"><a href="#cb13-47"></a><span class="in">    margin-left: 15px;</span></span>
+<span id="cb13-48"><a href="#cb13-48"></a><span class="in">    margin-bottom: -10px;</span></span>
+<span id="cb13-49"><a href="#cb13-49"></a><span class="in">    margin-top: 10px;</span></span>
+<span id="cb13-50"><a href="#cb13-50"></a><span class="in">}</span></span>
+<span id="cb13-51"><a href="#cb13-51"></a></span>
+<span id="cb13-52"><a href="#cb13-52"></a><span class="in">p.date {</span></span>
+<span id="cb13-53"><a href="#cb13-53"></a><span class="in">    color: #1a292c;</span></span>
+<span id="cb13-54"><a href="#cb13-54"></a><span class="in">    text-shadow: none;</span></span>
+<span id="cb13-55"><a href="#cb13-55"></a><span class="in">    font-weight: 300;</span></span>
+<span id="cb13-56"><a href="#cb13-56"></a><span class="in">    font-size: 30px;</span></span>
+<span id="cb13-57"><a href="#cb13-57"></a><span class="in">    text-align: center;</span></span>
+<span id="cb13-58"><a href="#cb13-58"></a><span class="in">    margin-left: 15px;</span></span>
+<span id="cb13-59"><a href="#cb13-59"></a><span class="in">    // margin-bottom: -30px;</span></span>
+<span id="cb13-60"><a href="#cb13-60"></a><span class="in">}</span></span>
+<span id="cb13-61"><a href="#cb13-61"></a></span>
+<span id="cb13-62"><a href="#cb13-62"></a><span class="in">p.subtitle:after {</span></span>
+<span id="cb13-63"><a href="#cb13-63"></a><span class="in">    content: "";</span></span>
+<span id="cb13-64"><a href="#cb13-64"></a><span class="in">    display: block;</span></span>
+<span id="cb13-65"><a href="#cb13-65"></a><span class="in">    border: none;</span></span>
+<span id="cb13-66"><a href="#cb13-66"></a><span class="in">    background-color: #eb811b;</span></span>
+<span id="cb13-67"><a href="#cb13-67"></a><span class="in">    color: #eb811b;</span></span>
+<span id="cb13-68"><a href="#cb13-68"></a><span class="in">    height: 1px;</span></span>
+<span id="cb13-69"><a href="#cb13-69"></a><span class="in">    margin: 25px 0 25px;</span></span>
+<span id="cb13-70"><a href="#cb13-70"></a><span class="in">}</span></span>
+<span id="cb13-71"><a href="#cb13-71"></a></span>
+<span id="cb13-72"><a href="#cb13-72"></a><span class="in">// Section break slide</span></span>
+<span id="cb13-73"><a href="#cb13-73"></a><span class="in">hr,</span></span>
+<span id="cb13-74"><a href="#cb13-74"></a><span class="in">h1::after {</span></span>
+<span id="cb13-75"><a href="#cb13-75"></a><span class="in">    content: "";</span></span>
+<span id="cb13-76"><a href="#cb13-76"></a><span class="in">    display: block;</span></span>
+<span id="cb13-77"><a href="#cb13-77"></a><span class="in">    border: none;</span></span>
+<span id="cb13-78"><a href="#cb13-78"></a><span class="in">    background-color: #eb811b;</span></span>
+<span id="cb13-79"><a href="#cb13-79"></a><span class="in">    color: #eb811b;</span></span>
+<span id="cb13-80"><a href="#cb13-80"></a><span class="in">    height: 1px;</span></span>
+<span id="cb13-81"><a href="#cb13-81"></a><span class="in">    margin: 1em 10px 0 10px;</span></span>
+<span id="cb13-82"><a href="#cb13-82"></a><span class="in">}</span></span>
+<span id="cb13-83"><a href="#cb13-83"></a></span>
+<span id="cb13-84"><a href="#cb13-84"></a><span class="in">// Override h1 style for title slide (remove section break slide style)</span></span>
+<span id="cb13-85"><a href="#cb13-85"></a><span class="in">hr,</span></span>
+<span id="cb13-86"><a href="#cb13-86"></a><span class="in">h1.title::after {</span></span>
+<span id="cb13-87"><a href="#cb13-87"></a><span class="in">    content: "";</span></span>
+<span id="cb13-88"><a href="#cb13-88"></a><span class="in">    display: block;</span></span>
+<span id="cb13-89"><a href="#cb13-89"></a><span class="in">    border: none;</span></span>
+<span id="cb13-90"><a href="#cb13-90"></a><span class="in">    background-color: transparent !important;</span></span>
+<span id="cb13-91"><a href="#cb13-91"></a><span class="in">    color: transparent !important;</span></span>
+<span id="cb13-92"><a href="#cb13-92"></a><span class="in">    height: 0px;</span></span>
+<span id="cb13-93"><a href="#cb13-93"></a><span class="in">    margin: 0px !important;</span></span>
+<span id="cb13-94"><a href="#cb13-94"></a><span class="in">}</span></span>
+<span id="cb13-95"><a href="#cb13-95"></a></span>
+<span id="cb13-96"><a href="#cb13-96"></a><span class="in">h2::after.title {</span></span>
+<span id="cb13-97"><a href="#cb13-97"></a><span class="in">    margin: 0px 0px 0px 0;</span></span>
+<span id="cb13-98"><a href="#cb13-98"></a><span class="in">}</span></span>
+<span id="cb13-99"><a href="#cb13-99"></a></span>
+<span id="cb13-100"><a href="#cb13-100"></a><span class="in">//Aquí moficas el número de páginas//</span></span>
+<span id="cb13-101"><a href="#cb13-101"></a><span class="in">.reveal .slide-number a {</span></span>
+<span id="cb13-102"><a href="#cb13-102"></a><span class="in">    font-size: 110%;</span></span>
+<span id="cb13-103"><a href="#cb13-103"></a><span class="in">    background-color: #fafafa;</span></span>
+<span id="cb13-104"><a href="#cb13-104"></a><span class="in">    border-radius: 12px;</span></span>
+<span id="cb13-105"><a href="#cb13-105"></a><span class="in">    position: margin-left;</span></span>
+<span id="cb13-106"><a href="#cb13-106"></a><span class="in">    padding: 5px;</span></span>
+<span id="cb13-107"><a href="#cb13-107"></a><span class="in">}</span></span>
+<span id="cb13-108"><a href="#cb13-108"></a></span>
+<span id="cb13-109"><a href="#cb13-109"></a><span class="in">// aquí es donde modificas la parte del título princial//</span></span>
+<span id="cb13-110"><a href="#cb13-110"></a><span class="in">h1.title {</span></span>
+<span id="cb13-111"><a href="#cb13-111"></a><span class="in">    color: #ffeda0;</span></span>
+<span id="cb13-112"><a href="#cb13-112"></a><span class="in">    background-color: #23373b;</span></span>
+<span id="cb13-113"><a href="#cb13-113"></a><span class="in">    font-size: 60px;</span></span>
+<span id="cb13-114"><a href="#cb13-114"></a><span class="in">    text-shadow: none;</span></span>
+<span id="cb13-115"><a href="#cb13-115"></a><span class="in">    font-weight: 400;</span></span>
+<span id="cb13-116"><a href="#cb13-116"></a><span class="in">    text-align: center;</span></span>
+<span id="cb13-117"><a href="#cb13-117"></a><span class="in">    margin-left: 15px;</span></span>
+<span id="cb13-118"><a href="#cb13-118"></a><span class="in">    padding-top: 10px;</span></span>
+<span id="cb13-119"><a href="#cb13-119"></a><span class="in">}</span></span>
+<span id="cb13-120"><a href="#cb13-120"></a><span class="in">.reveal h2 {</span></span>
+<span id="cb13-121"><a href="#cb13-121"></a><span class="in">    background-color:#d9d9d9;</span></span>
+<span id="cb13-122"><a href="#cb13-122"></a><span class="in">    padding: 5px 0px 5px 10px;</span></span>
+<span id="cb13-123"><a href="#cb13-123"></a><span class="in">    color: #800026;</span></span>
+<span id="cb13-124"><a href="#cb13-124"></a><span class="in">    border-radius: 12px;</span></span>
+<span id="cb13-125"><a href="#cb13-125"></a><span class="in">}</span></span>
+<span id="cb13-126"><a href="#cb13-126"></a><span class="in">.middle {</span></span>
+<span id="cb13-127"><a href="#cb13-127"></a><span class="in">  vertical-align: middle;</span></span>
+<span id="cb13-128"><a href="#cb13-128"></a><span class="in">}</span></span>
+<span id="cb13-129"><a href="#cb13-129"></a></span>
+<span id="cb13-130"><a href="#cb13-130"></a><span class="in">.center img {</span></span>
+<span id="cb13-131"><a href="#cb13-131"></a><span class="in">  display: block;</span></span>
+<span id="cb13-132"><a href="#cb13-132"></a><span class="in">  margin-left: auto;</span></span>
+<span id="cb13-133"><a href="#cb13-133"></a><span class="in">  margin-right: auto;</span></span>
+<span id="cb13-134"><a href="#cb13-134"></a><span class="in">}</span></span>
+<span id="cb13-135"><a href="#cb13-135"></a></span>
+<span id="cb13-136"><a href="#cb13-136"></a><span class="in">.center {</span></span>
+<span id="cb13-137"><a href="#cb13-137"></a><span class="in">  text-align: center;</span></span>
+<span id="cb13-138"><a href="#cb13-138"></a><span class="in">}</span></span>
+<span id="cb13-139"><a href="#cb13-139"></a></span>
+<span id="cb13-140"><a href="#cb13-140"></a><span class="in">.medium {</span></span>
+<span id="cb13-141"><a href="#cb13-141"></a><span class="in">  font-size: 0.85em;</span></span>
+<span id="cb13-142"><a href="#cb13-142"></a><span class="in">}</span></span>
+<span id="cb13-143"><a href="#cb13-143"></a></span>
+<span id="cb13-144"><a href="#cb13-144"></a><span class="in">.small {</span></span>
+<span id="cb13-145"><a href="#cb13-145"></a><span class="in">  font-size: 0.75em;</span></span>
+<span id="cb13-146"><a href="#cb13-146"></a><span class="in">}</span></span>
+<span id="cb13-147"><a href="#cb13-147"></a></span>
+<span id="cb13-148"><a href="#cb13-148"></a><span class="in">.molstar-app {</span></span>
+<span id="cb13-149"><a href="#cb13-149"></a><span class="in">  position: relative;</span></span>
+<span id="cb13-150"><a href="#cb13-150"></a><span class="in">  width: 100%;</span></span>
+<span id="cb13-151"><a href="#cb13-151"></a><span class="in">  height: 500px;</span></span>
+<span id="cb13-152"><a href="#cb13-152"></a><span class="in">  padding-bottom: 56.25%;</span></span>
+<span id="cb13-153"><a href="#cb13-153"></a><span class="in">}</span></span>
+<span id="cb13-154"><a href="#cb13-154"></a></span>
+<span id="cb13-155"><a href="#cb13-155"></a><span class="in">.reveal .progress {</span></span>
+<span id="cb13-156"><a href="#cb13-156"></a><span class="in">    color: gray;</span></span>
+<span id="cb13-157"><a href="#cb13-157"></a><span class="in">  height: 8px;</span></span>
+<span id="cb13-158"><a href="#cb13-158"></a><span class="in">}</span></span>
+<span id="cb13-159"><a href="#cb13-159"></a></span>
+<span id="cb13-160"><a href="#cb13-160"></a><span class="in">iframe {</span></span>
+<span id="cb13-161"><a href="#cb13-161"></a><span class="in">    display: block;</span></span>
+<span id="cb13-162"><a href="#cb13-162"></a><span class="in">    margin-right: auto;</span></span>
+<span id="cb13-163"><a href="#cb13-163"></a><span class="in">    margin-left: auto;</span></span>
+<span id="cb13-164"><a href="#cb13-164"></a><span class="in">}</span></span>
+<span id="cb13-165"><a href="#cb13-165"></a></span>
+<span id="cb13-166"><a href="#cb13-166"></a><span class="in">/*********************************************</span></span>
+<span id="cb13-167"><a href="#cb13-167"></a><span class="in"> * SLIDES</span></span>
+<span id="cb13-168"><a href="#cb13-168"></a><span class="in"> *********************************************/</span></span>
+<span id="cb13-169"><a href="#cb13-169"></a></span>
+<span id="cb13-170"><a href="#cb13-170"></a><span class="in">.reveal {</span></span>
+<span id="cb13-171"><a href="#cb13-171"></a><span class="in">    position: relative;</span></span>
+<span id="cb13-172"><a href="#cb13-172"></a><span class="in">    width: 100%;</span></span>
+<span id="cb13-173"><a href="#cb13-173"></a><span class="in">    height: 100%;</span></span>
+<span id="cb13-174"><a href="#cb13-174"></a><span class="in">    overflow: hidden;</span></span>
+<span id="cb13-175"><a href="#cb13-175"></a><span class="in">    touch-action: pinch-zoom;</span></span>
+<span id="cb13-176"><a href="#cb13-176"></a><span class="in">}</span></span>
+<span id="cb13-177"><a href="#cb13-177"></a></span>
+<span id="cb13-178"><a href="#cb13-178"></a><span class="in">.box {</span></span>
+<span id="cb13-179"><a href="#cb13-179"></a><span class="in">  border-radius: 10px;</span></span>
+<span id="cb13-180"><a href="#cb13-180"></a><span class="in">  background-color: yellow;</span></span>
+<span id="cb13-181"><a href="#cb13-181"></a><span class="in">  padding: 1em;</span></span>
+<span id="cb13-182"><a href="#cb13-182"></a><span class="in">  text-align: left;</span></span>
+<span id="cb13-183"><a href="#cb13-183"></a><span class="in">  vertical-align: center;</span></span>
+<span id="cb13-184"><a href="#cb13-184"></a><span class="in">  border: 5px solid $presentation-heading-color;</span></span>
+<span id="cb13-185"><a href="#cb13-185"></a><span class="in">}</span></span>
+<span id="cb13-186"><a href="#cb13-186"></a></span>
+<span id="cb13-187"><a href="#cb13-187"></a><span class="in">.blackbox {</span></span>
+<span id="cb13-188"><a href="#cb13-188"></a><span class="in">  padding: 1em;</span></span>
+<span id="cb13-189"><a href="#cb13-189"></a><span class="in">  position: relative;</span></span>
+<span id="cb13-190"><a href="#cb13-190"></a><span class="in">  background: white;</span></span>
+<span id="cb13-191"><a href="#cb13-191"></a><span class="in">  color: black;</span></span>
+<span id="cb13-192"><a href="#cb13-192"></a><span class="in">  border: 2px solid orange;</span></span>
+<span id="cb13-193"><a href="#cb13-193"></a><span class="in">  border-radius: 10px;</span></span>
+<span id="cb13-194"><a href="#cb13-194"></a><span class="in">  </span></span>
+<span id="cb13-195"><a href="#cb13-195"></a><span class="in">}</span></span>
+<span id="cb13-196"><a href="#cb13-196"></a></span>
+<span id="cb13-197"><a href="#cb13-197"></a><span class="in">.rectangle {</span></span>
+<span id="cb13-198"><a href="#cb13-198"></a><span class="in">  padding: 1em;</span></span>
+<span id="cb13-199"><a href="#cb13-199"></a><span class="in">  position: relative;</span></span>
+<span id="cb13-200"><a href="#cb13-200"></a><span class="in">  background: none;</span></span>
+<span id="cb13-201"><a href="#cb13-201"></a><span class="in">  color: black;</span></span>
+<span id="cb13-202"><a href="#cb13-202"></a><span class="in">  border: 2px solid orange;</span></span>
+<span id="cb13-203"><a href="#cb13-203"></a><span class="in">  border-radius: 10px;</span></span>
+<span id="cb13-204"><a href="#cb13-204"></a><span class="in">  </span></span>
+<span id="cb13-205"><a href="#cb13-205"></a><span class="in">}</span></span>
+<span id="cb13-206"><a href="#cb13-206"></a><span class="in">/*-- scss:defaults --*/</span></span>
+<span id="cb13-207"><a href="#cb13-207"></a></span>
+<span id="cb13-208"><a href="#cb13-208"></a><span class="in">// fonts</span></span>
+<span id="cb13-209"><a href="#cb13-209"></a><span class="in">@import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,700,700i);</span></span>
+<span id="cb13-210"><a href="#cb13-210"></a><span class="in">@import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);</span></span>
+<span id="cb13-211"><a href="#cb13-211"></a><span class="in">@import url("https://fonts.googleapis.com/css?family=Roboto+Mono|JetBrains+Mono&amp;display=swap");</span></span>
+<span id="cb13-212"><a href="#cb13-212"></a><span class="in">@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap");</span></span>
+<span id="cb13-213"><a href="#cb13-213"></a></span>
+<span id="cb13-214"><a href="#cb13-214"></a><span class="in">$font-family-sans-serif: "Roboto", "Fira Sans", "Droid Serif", serif !default;</span></span>
+<span id="cb13-215"><a href="#cb13-215"></a><span class="in">$font-family-monospace: "JetBrains Mono", "Fira Code", monospace;</span></span>
+<span id="cb13-216"><a href="#cb13-216"></a><span class="in">/*$font-family-sans-serif: "  Crimson Text  ", sans-serif;*/</span></span>
+<span id="cb13-217"><a href="#cb13-217"></a><span class="in">/*$presentation-heading-color: #081d58 !default;*/</span></span>
+<span id="cb13-218"><a href="#cb13-218"></a><span class="in">$presentation-title-slide-text-align: "center";</span></span>
+<span id="cb13-219"><a href="#cb13-219"></a><span class="in">$presentation-h2-slide-text-align: "center";</span></span>
+<span id="cb13-220"><a href="#cb13-220"></a><span class="in">$code-block-font-size: 0.6em;</span></span>
+<span id="cb13-221"><a href="#cb13-221"></a><span class="in">$code-color: #5f5f5f;</span></span>
+<span id="cb13-222"><a href="#cb13-222"></a><span class="in">$presentation-h2-font-size: 1.4em;</span></span>
+<span id="cb13-223"><a href="#cb13-223"></a><span class="in">$presentation-font-size-root: 32px;</span></span>
+<span id="cb13-224"><a href="#cb13-224"></a><span class="in">$presentation-line-height: 1.5em;</span></span>
+<span id="cb13-225"><a href="#cb13-225"></a><span class="in">$presentation-heading-font-weight: 400;</span></span>
 <span id="cb13-226"><a href="#cb13-226"></a></span>
-<span id="cb13-227"><a href="#cb13-227"></a>/*-- scss:rules --*/</span>
-<span id="cb13-228"><a href="#cb13-228"></a></span>
-<span id="cb13-229"><a href="#cb13-229"></a>.reveal .custom-url a {</span>
-<span id="cb13-230"><a href="#cb13-230"></a>  position: absolute;</span>
-<span id="cb13-231"><a href="#cb13-231"></a>  color: #81a2be;</span>
-<span id="cb13-232"><a href="#cb13-232"></a>  font-size: 1.5em;</span>
-<span id="cb13-233"><a href="#cb13-233"></a>  text-align: right;</span>
-<span id="cb13-234"><a href="#cb13-234"></a>  right: 20px;</span>
-<span id="cb13-235"><a href="#cb13-235"></a>  top: 570px;</span>
-<span id="cb13-236"><a href="#cb13-236"></a>}</span>
-<span id="cb13-237"><a href="#cb13-237"></a></span>
-<span id="cb13-238"><a href="#cb13-238"></a>details&gt;summary {</span>
-<span id="cb13-239"><a href="#cb13-239"></a>  font-size: 0.75em;</span>
-<span id="cb13-240"><a href="#cb13-240"></a>}</span>
-<span id="cb13-241"><a href="#cb13-241"></a></span>
+<span id="cb13-227"><a href="#cb13-227"></a></span>
+<span id="cb13-228"><a href="#cb13-228"></a><span class="in">/*-- scss:rules --*/</span></span>
+<span id="cb13-229"><a href="#cb13-229"></a></span>
+<span id="cb13-230"><a href="#cb13-230"></a><span class="in">.reveal .custom-url a {</span></span>
+<span id="cb13-231"><a href="#cb13-231"></a><span class="in">  position: absolute;</span></span>
+<span id="cb13-232"><a href="#cb13-232"></a><span class="in">  color: #81a2be;</span></span>
+<span id="cb13-233"><a href="#cb13-233"></a><span class="in">  font-size: 1.5em;</span></span>
+<span id="cb13-234"><a href="#cb13-234"></a><span class="in">  text-align: right;</span></span>
+<span id="cb13-235"><a href="#cb13-235"></a><span class="in">  right: 20px;</span></span>
+<span id="cb13-236"><a href="#cb13-236"></a><span class="in">  top: 570px;</span></span>
+<span id="cb13-237"><a href="#cb13-237"></a><span class="in">}</span></span>
+<span id="cb13-238"><a href="#cb13-238"></a></span>
+<span id="cb13-239"><a href="#cb13-239"></a><span class="in">details&gt;summary {</span></span>
+<span id="cb13-240"><a href="#cb13-240"></a><span class="in">  font-size: 0.75em;</span></span>
+<span id="cb13-241"><a href="#cb13-241"></a><span class="in">}</span></span>
 <span id="cb13-242"><a href="#cb13-242"></a></span>
-<span id="cb13-243"><a href="#cb13-243"></a>.medium {</span>
-<span id="cb13-244"><a href="#cb13-244"></a>  font-size: 0.85em;</span>
-<span id="cb13-245"><a href="#cb13-245"></a>}</span>
-<span id="cb13-246"><a href="#cb13-246"></a></span>
-<span id="cb13-247"><a href="#cb13-247"></a>.small {</span>
-<span id="cb13-248"><a href="#cb13-248"></a>  font-size: 0.75em;</span>
-<span id="cb13-249"><a href="#cb13-249"></a>}</span>
-<span id="cb13-250"><a href="#cb13-250"></a>.big {</span>
-<span id="cb13-251"><a href="#cb13-251"></a>  font-size: 1.2em;</span>
-<span id="cb13-252"><a href="#cb13-252"></a>}</span>
-<span id="cb13-253"><a href="#cb13-253"></a></span>
-<span id="cb13-254"><a href="#cb13-254"></a>.reveal .slide .in-out {</span>
-<span id="cb13-255"><a href="#cb13-255"></a>  margin-top: 0.5em;</span>
-<span id="cb13-256"><a href="#cb13-256"></a>  margin-bottom: 0.5em;</span>
-<span id="cb13-257"><a href="#cb13-257"></a>  padding-top: 0.1em;</span>
-<span id="cb13-258"><a href="#cb13-258"></a>  padding-bottom: 0.1em;</span>
-<span id="cb13-259"><a href="#cb13-259"></a>  padding-left: 1em;</span>
-<span id="cb13-260"><a href="#cb13-260"></a>  background: #E8E8E8;</span>
-<span id="cb13-261"><a href="#cb13-261"></a>  font-family: $font-family-monospace;</span>
-<span id="cb13-262"><a href="#cb13-262"></a>  font-size: 0.6em;</span>
-<span id="cb13-263"><a href="#cb13-263"></a>}</span>
-<span id="cb13-264"><a href="#cb13-264"></a></span>
-<span id="cb13-265"><a href="#cb13-265"></a>.reveal .slide .goal {</span>
-<span id="cb13-266"><a href="#cb13-266"></a>  margin-top: 0.5em;</span>
-<span id="cb13-267"><a href="#cb13-267"></a>  margin-bottom: 0.5em;</span>
-<span id="cb13-268"><a href="#cb13-268"></a>  padding-top: 0.1em;</span>
-<span id="cb13-269"><a href="#cb13-269"></a>  padding-bottom: 0.1em;</span>
-<span id="cb13-270"><a href="#cb13-270"></a>  padding-left: 1em;</span>
-<span id="cb13-271"><a href="#cb13-271"></a>  background: #ccddeb;</span>
-<span id="cb13-272"><a href="#cb13-272"></a>}</span>
-<span id="cb13-273"><a href="#cb13-273"></a></span>
-<span id="cb13-274"><a href="#cb13-274"></a>.molstar-app {</span>
-<span id="cb13-275"><a href="#cb13-275"></a>  position: relative;</span>
-<span id="cb13-276"><a href="#cb13-276"></a>  width: 100%;</span>
-<span id="cb13-277"><a href="#cb13-277"></a>  height: 500px;</span>
-<span id="cb13-278"><a href="#cb13-278"></a>  padding-bottom: 56.25%;</span>
-<span id="cb13-279"><a href="#cb13-279"></a>}</span>
-<span id="cb13-280"><a href="#cb13-280"></a></span>
-<span id="cb13-281"><a href="#cb13-281"></a>span {</span>
-<span id="cb13-282"><a href="#cb13-282"></a>  content: "\212B";</span>
-<span id="cb13-283"><a href="#cb13-283"></a>}</span>
-<span id="cb13-284"><a href="#cb13-284"></a></span>
-<span id="cb13-285"><a href="#cb13-285"></a>.tg  {border-collapse:collapse;border-spacing:0;}</span>
-<span id="cb13-286"><a href="#cb13-286"></a>.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;</span>
-<span id="cb13-287"><a href="#cb13-287"></a>  overflow:hidden;padding:10px 5px;word-break:normal;}</span>
-<span id="cb13-288"><a href="#cb13-288"></a>.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;</span>
-<span id="cb13-289"><a href="#cb13-289"></a>  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}</span>
-<span id="cb13-290"><a href="#cb13-290"></a>.tg-pghf{background-color:#225EA8;color:#FFF;text-align:center;vertical-align:top}</span>
-<span id="cb13-291"><a href="#cb13-291"></a>.tg-7p6x{background-color:#081D57;color:#FFF;text-align:center;vertical-align:top}</span>
-<span id="cb13-292"><a href="#cb13-292"></a>.tg-baqh{text-align:center;vertical-align:top}</span>
-<span id="cb13-293"><a href="#cb13-293"></a>.tg-yxcw{background-color:#FFFFDA;border-color:inherit;text-align:center;vertical-align:top}</span>
-<span id="cb13-294"><a href="#cb13-294"></a>.tg-24tk{background-color:#F2F2F2;border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}</span>
-<span id="cb13-295"><a href="#cb13-295"></a>.tg-2p8v{background-color:#F2F2F2;font-weight:bold;text-align:center;vertical-align:top}</span>
-<span id="cb13-296"><a href="#cb13-296"></a>.tg-u7h8{background-color:#EDF9B1;border-color:inherit;text-align:center;vertical-align:top}</span>
-<span id="cb13-297"><a href="#cb13-297"></a>.tg-u9n8{background-color:#C7E9B4;text-align:center;vertical-align:top}</span>
-<span id="cb13-298"><a href="#cb13-298"></a>.tg-u1u2{background-color:#7FCDBB;text-align:center;vertical-align:top}</span>
-<span id="cb13-299"><a href="#cb13-299"></a>.tg-k470{background-color:#40B6C5;text-align:center;vertical-align:top}</span>
-<span id="cb13-300"><a href="#cb13-300"></a>.tg-eg3g{background-color:#1D91C0;color:#FFF;text-align:center;vertical-align:top}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-243"><a href="#cb13-243"></a></span>
+<span id="cb13-244"><a href="#cb13-244"></a><span class="in">.medium {</span></span>
+<span id="cb13-245"><a href="#cb13-245"></a><span class="in">  font-size: 0.85em;</span></span>
+<span id="cb13-246"><a href="#cb13-246"></a><span class="in">}</span></span>
+<span id="cb13-247"><a href="#cb13-247"></a></span>
+<span id="cb13-248"><a href="#cb13-248"></a><span class="in">.small {</span></span>
+<span id="cb13-249"><a href="#cb13-249"></a><span class="in">  font-size: 0.75em;</span></span>
+<span id="cb13-250"><a href="#cb13-250"></a><span class="in">}</span></span>
+<span id="cb13-251"><a href="#cb13-251"></a><span class="in">.big {</span></span>
+<span id="cb13-252"><a href="#cb13-252"></a><span class="in">  font-size: 1.2em;</span></span>
+<span id="cb13-253"><a href="#cb13-253"></a><span class="in">}</span></span>
+<span id="cb13-254"><a href="#cb13-254"></a></span>
+<span id="cb13-255"><a href="#cb13-255"></a><span class="in">.reveal .slide .in-out {</span></span>
+<span id="cb13-256"><a href="#cb13-256"></a><span class="in">  margin-top: 0.5em;</span></span>
+<span id="cb13-257"><a href="#cb13-257"></a><span class="in">  margin-bottom: 0.5em;</span></span>
+<span id="cb13-258"><a href="#cb13-258"></a><span class="in">  padding-top: 0.1em;</span></span>
+<span id="cb13-259"><a href="#cb13-259"></a><span class="in">  padding-bottom: 0.1em;</span></span>
+<span id="cb13-260"><a href="#cb13-260"></a><span class="in">  padding-left: 1em;</span></span>
+<span id="cb13-261"><a href="#cb13-261"></a><span class="in">  background: #E8E8E8;</span></span>
+<span id="cb13-262"><a href="#cb13-262"></a><span class="in">  font-family: $font-family-monospace;</span></span>
+<span id="cb13-263"><a href="#cb13-263"></a><span class="in">  font-size: 0.6em;</span></span>
+<span id="cb13-264"><a href="#cb13-264"></a><span class="in">}</span></span>
+<span id="cb13-265"><a href="#cb13-265"></a></span>
+<span id="cb13-266"><a href="#cb13-266"></a><span class="in">.reveal .slide .goal {</span></span>
+<span id="cb13-267"><a href="#cb13-267"></a><span class="in">  margin-top: 0.5em;</span></span>
+<span id="cb13-268"><a href="#cb13-268"></a><span class="in">  margin-bottom: 0.5em;</span></span>
+<span id="cb13-269"><a href="#cb13-269"></a><span class="in">  padding-top: 0.1em;</span></span>
+<span id="cb13-270"><a href="#cb13-270"></a><span class="in">  padding-bottom: 0.1em;</span></span>
+<span id="cb13-271"><a href="#cb13-271"></a><span class="in">  padding-left: 1em;</span></span>
+<span id="cb13-272"><a href="#cb13-272"></a><span class="in">  background: #ccddeb;</span></span>
+<span id="cb13-273"><a href="#cb13-273"></a><span class="in">}</span></span>
+<span id="cb13-274"><a href="#cb13-274"></a></span>
+<span id="cb13-275"><a href="#cb13-275"></a><span class="in">.molstar-app {</span></span>
+<span id="cb13-276"><a href="#cb13-276"></a><span class="in">  position: relative;</span></span>
+<span id="cb13-277"><a href="#cb13-277"></a><span class="in">  width: 100%;</span></span>
+<span id="cb13-278"><a href="#cb13-278"></a><span class="in">  height: 500px;</span></span>
+<span id="cb13-279"><a href="#cb13-279"></a><span class="in">  padding-bottom: 56.25%;</span></span>
+<span id="cb13-280"><a href="#cb13-280"></a><span class="in">}</span></span>
+<span id="cb13-281"><a href="#cb13-281"></a></span>
+<span id="cb13-282"><a href="#cb13-282"></a><span class="in">span {</span></span>
+<span id="cb13-283"><a href="#cb13-283"></a><span class="in">  content: "\212B";</span></span>
+<span id="cb13-284"><a href="#cb13-284"></a><span class="in">}</span></span>
+<span id="cb13-285"><a href="#cb13-285"></a></span>
+<span id="cb13-286"><a href="#cb13-286"></a><span class="in">.tg  {border-collapse:collapse;border-spacing:0;}</span></span>
+<span id="cb13-287"><a href="#cb13-287"></a><span class="in">.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;</span></span>
+<span id="cb13-288"><a href="#cb13-288"></a><span class="in">  overflow:hidden;padding:10px 5px;word-break:normal;}</span></span>
+<span id="cb13-289"><a href="#cb13-289"></a><span class="in">.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;</span></span>
+<span id="cb13-290"><a href="#cb13-290"></a><span class="in">  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}</span></span>
+<span id="cb13-291"><a href="#cb13-291"></a><span class="in">.tg-pghf{background-color:#225EA8;color:#FFF;text-align:center;vertical-align:top}</span></span>
+<span id="cb13-292"><a href="#cb13-292"></a><span class="in">.tg-7p6x{background-color:#081D57;color:#FFF;text-align:center;vertical-align:top}</span></span>
+<span id="cb13-293"><a href="#cb13-293"></a><span class="in">.tg-baqh{text-align:center;vertical-align:top}</span></span>
+<span id="cb13-294"><a href="#cb13-294"></a><span class="in">.tg-yxcw{background-color:#FFFFDA;border-color:inherit;text-align:center;vertical-align:top}</span></span>
+<span id="cb13-295"><a href="#cb13-295"></a><span class="in">.tg-24tk{background-color:#F2F2F2;border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}</span></span>
+<span id="cb13-296"><a href="#cb13-296"></a><span class="in">.tg-2p8v{background-color:#F2F2F2;font-weight:bold;text-align:center;vertical-align:top}</span></span>
+<span id="cb13-297"><a href="#cb13-297"></a><span class="in">.tg-u7h8{background-color:#EDF9B1;border-color:inherit;text-align:center;vertical-align:top}</span></span>
+<span id="cb13-298"><a href="#cb13-298"></a><span class="in">.tg-u9n8{background-color:#C7E9B4;text-align:center;vertical-align:top}</span></span>
+<span id="cb13-299"><a href="#cb13-299"></a><span class="in">.tg-u1u2{background-color:#7FCDBB;text-align:center;vertical-align:top}</span></span>
+<span id="cb13-300"><a href="#cb13-300"></a><span class="in">.tg-k470{background-color:#40B6C5;text-align:center;vertical-align:top}</span></span>
+<span id="cb13-301"><a href="#cb13-301"></a><span class="in">.tg-eg3g{background-color:#1D91C0;color:#FFF;text-align:center;vertical-align:top}</span></span>
+<span id="cb13-302"><a href="#cb13-302"></a></span>
+<span id="cb13-303"><a href="#cb13-303"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section><section id="section" class="level2" data-background-color="#FFFFFF"><h2 data-background-color="#FFFFFF" class="anchored" data-anchor-id="section"></h2>
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -1499,9 +1514,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1537,10 +1566,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1550,8 +1578,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1566,6 +1603,238 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1607,7 +1876,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
-    <div class="nav-footer-left">-Haly-en-</div>   
+    <div class="nav-footer-left">
+<p>-Haly-en-</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 
