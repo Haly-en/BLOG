@@ -1,5 +1,12 @@
 [
   {
+    "listing": "/talks.html",
+    "items": [
+      "/Talks/R-ladies/index.html",
+      "/Talks/Pyladies-conf/index.html"
+    ]
+  },
+  {
     "listing": "/blog.html",
     "items": [
       "/posts/herramientas-R/index.html",
