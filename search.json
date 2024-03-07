@@ -14,18 +14,18 @@
     "text": "Talks-Rladies\n\n\n\nTalks\n\n\n\n\n\n\n\nHaly-en\n\n\nDec 31, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTalks-PyLadies Cuernavaca\n\n\n\nTalks\n\n\n\n\n\n\n\nHaly-en\n\n\nDec 31, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/Data_visualitation/index.html",
-    "href": "posts/Data_visualitation/index.html",
-    "title": "Data Visualitation",
-    "section": "",
-    "text": "Note\n\n\n\nHere are some code For more info, text me at: maricela.carrera@ibt.unam.mx\n\n\nData from sigma54 analysis.\nPart of my project from my Ph.D in Science.\nDistribution of the sigma RpoN protein in bacterial organisms of bacterial phylogenetic groups\n\nItol tree: rRNA from 12 phyla, organisms representatives at class level.\n\nClusters of Orthologous Genes (COGs) at RpoN Regulation\n\nSome with experimental Data for representation of a plate.\nWith the package in R, ggplate\nplate_plot_384_well_plate\n\nCODE\n\nCodelibrary(ggplate)\n\n📊 Welcome to ggplate version 0.0.1! 📈\n                            \n🖍 Have fun plotting your data! 💻\n\nCodelibrary(ggplot2)\nplate_02 &lt;- read.csv(\"plate.csv\", header = TRUE,sep = \",\")\n# Create a 48-well plot with adjusted legend limits\n png(\"plate_plot_384_well_plate.png\", width = 10, height = 6, unit = \"in\", res = 300)\nplate_plot(\n  title = \"Carga de pozos\",\n  data = plate_02,\n  position = well,\n  value = Value,\n  plate_type = \"round\",\n  label = Value,\n  plate_size = 96,\n  show_legend = FALSE,\n  colour = c(\"#e11947\",\"#e35b2b\",\"#dbe930\",\"#98d339\",\"#6ec645\",\"#4cbb4d\",\"#3fae4d\",\"#3fb96b\",\"#43b3ac\",\"#5194c1\",\"#5194c1\",\"#3852a8\")\n  #colour = c('#9e0142','#d53e4f','#f46d43','#fdae61','#fee08b','#ffeda0','#ffffbf','#e6f598','#abdda4','#66c2a5','#3288bd','#5e4fa2')\n  )\ndev.off()\n\nquartz_off_screen \n                2 \n\nCodecolour = c(\"#e11947\",\"#e35b2b\",\"#dbe930\",\"#98d339\",\"#6ec645\",\"#4cbb4d\",\"#3fae4d\",\"#3fb96b\",\"#43b3ac\",\"#5194c1\",\"#5194c1\",\"#3852a8\")"
+    "objectID": "posts/Clase_Introduccion_a_Quarto/index.html#quarto-1",
+    "href": "posts/Clase_Introduccion_a_Quarto/index.html#quarto-1",
+    "title": "Clase introductoria quarto artículo",
+    "section": "Quarto",
+    "text": "Quarto\n\nParafraseando…:\n\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.\n\n\nQuarto is based on Pandoc and uses its variation of markdown as its underlying document syntax. Pandoc markdown is an extended and slightly revised version of John Gruber’s Markdown syntax and Markdown is a plain text format.\n\nMarkdown is a plain text format that is designed to be easy to write, and, even more importantly, easy to read"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "posts/paginas_utiles_Quarto/index.html",
+    "href": "posts/paginas_utiles_Quarto/index.html",
+    "title": "Páginas útiles",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "Blogs interesantes\n\nAquí un link para hacer un BLOG_QMD\nmine-cetinkaya-runde\n\n\n\nStickers\n\nStickers de los diferentes paquetes"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -140,18 +140,11 @@
     "text": "Para asignar nombre a las columnas :\n```{r}\n\nbase_datos &lt;- text::column_to_rownames(base_datos, loc = 1)\n\n```\nPara quitar columnas que no queires de un data set\ndf &lt;- subset(df, select = -c(algo, total) )"
   },
   {
-    "objectID": "posts/Clase_intro/index.html#quarto-1",
-    "href": "posts/Clase_intro/index.html#quarto-1",
-    "title": "Clase introductoria quarto artículo",
-    "section": "Quarto",
-    "text": "Quarto\n\nParafraseando…:\n\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.\n\n\nQuarto is based on Pandoc and uses its variation of markdown as its underlying document syntax. Pandoc markdown is an extended and slightly revised version of John Gruber’s Markdown syntax and Markdown is a plain text format.\n\nMarkdown is a plain text format that is designed to be easy to write, and, even more importantly, easy to read"
-  },
-  {
-    "objectID": "posts/paginas_utiles_Quarto/index.html",
-    "href": "posts/paginas_utiles_Quarto/index.html",
-    "title": "Páginas útiles",
+    "objectID": "posts/Data_visualitation/index.html",
+    "href": "posts/Data_visualitation/index.html",
+    "title": "Data Visualitation",
     "section": "",
-    "text": "Blogs interesantes\n\nAquí un link para hacer un BLOG_QMD\nmine-cetinkaya-runde\n\n\n\nStickers\n\nStickers de los diferentes paquetes"
+    "text": "Note\n\n\n\nHere are some code For more info, text me at: maricela.carrera@ibt.unam.mx\n\n\nData from sigma54 analysis.\nPart of my project from my Ph.D in Science.\nDistribution of the sigma RpoN protein in bacterial organisms of bacterial phylogenetic groups\n\nItol tree: rRNA from 12 phyla, organisms representatives at class level.\n\nClusters of Orthologous Genes (COGs) at RpoN Regulation\n\nSome with experimental Data for representation of a plate.\nWith the package in R, ggplate\nplate_plot_384_well_plate\n\nCODE\n\nCodelibrary(ggplate)\n\n📊 Welcome to ggplate version 0.0.1! 📈\n                            \n🖍 Have fun plotting your data! 💻\n\nCodelibrary(ggplot2)\nplate_02 &lt;- read.csv(\"plate.csv\", header = TRUE,sep = \",\")\n# Create a 48-well plot with adjusted legend limits\n png(\"plate_plot_384_well_plate.png\", width = 10, height = 6, unit = \"in\", res = 300)\nplate_plot(\n  title = \"Carga de pozos\",\n  data = plate_02,\n  position = well,\n  value = Value,\n  plate_type = \"round\",\n  label = Value,\n  plate_size = 96,\n  show_legend = FALSE,\n  colour = c(\"#e11947\",\"#e35b2b\",\"#dbe930\",\"#98d339\",\"#6ec645\",\"#4cbb4d\",\"#3fae4d\",\"#3fb96b\",\"#43b3ac\",\"#5194c1\",\"#5194c1\",\"#3852a8\")\n  #colour = c('#9e0142','#d53e4f','#f46d43','#fdae61','#fee08b','#ffeda0','#ffffbf','#e6f598','#abdda4','#66c2a5','#3288bd','#5e4fa2')\n  )\ndev.off()\n\nquartz_off_screen \n                2 \n\nCodecolour = c(\"#e11947\",\"#e35b2b\",\"#dbe930\",\"#98d339\",\"#6ec645\",\"#4cbb4d\",\"#3fae4d\",\"#3fb96b\",\"#43b3ac\",\"#5194c1\",\"#5194c1\",\"#3852a8\")"
   },
   {
     "objectID": "index.html",
@@ -165,7 +158,7 @@
     "href": "blog.html",
     "title": "Portafolio",
     "section": "",
-    "text": "Manipulación de datos con R\n\n\n\ncomandos utiles\n\n\n\n\n\n\n\nmcarrera\n\n\nMay 4, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Visualitation\n\n\n\nData Visualization\n\n\n\n\n\n\n\nMaricela Carrera\n\n\nFeb 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nComandos útiles\n\n\n\ncomandos utiles\n\n\n\n\n\n\n\nmcarrera\n\n\nFeb 16, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPara presentaciones con Quarto\n\n\n\npresentaciones\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 23, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nPáginas útiles\n\n\n\nQuarto\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClase introductoria quarto artículo\n\n\n\nQuarto_articulo\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 19, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\nTristan O’Malley\n\n\nJan 16, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Manipulación de datos con R\n\n\n\ncomandos utiles\n\n\n\n\n\n\n\nmcarrera\n\n\nMay 4, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Visualitation\n\n\n\nData Visualization\n\n\n\n\n\n\n\nMaricela Carrera\n\n\nFeb 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPara presentaciones con Quarto\n\n\n\npresentaciones\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 23, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nPáginas útiles\n\n\n\nQuarto\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClase introductoria quarto artículo\n\n\n\nQuarto_articulo\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 19, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Talks/R-ladies/index.html#temario",

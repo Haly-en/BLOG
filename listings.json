@@ -11,11 +11,9 @@
     "items": [
       "/posts/herramientas-R/index.html",
       "/posts/Data_visualitation/index.html",
-      "/posts/comandos_utiles/index.html",
       "/posts/post-with-code/index.html",
       "/posts/paginas_utiles_Quarto/index.html",
-      "/posts/Clase_intro/index.html",
-      "/posts/welcome/index.html"
+      "/posts/Clase_Introduccion_a_Quarto/index.html"
     ]
   }
 ]

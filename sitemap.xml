@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://Haly-en.github.io/BLOG/Talks/Pyladies-conf/index.html</loc>
-    <lastmod>2024-03-07T21:23:58.000Z</lastmod>
+    <lastmod>2024-03-07T21:31:50.000Z</lastmod>
   </url>
   <url>
     <loc>https://Haly-en.github.io/BLOG/talks.html</loc>
@@ -13,12 +13,12 @@
     <lastmod>2024-03-07T21:27:18.000Z</lastmod>
   </url>
   <url>
-    <loc>https://Haly-en.github.io/BLOG/posts/Data_visualitation/index.html</loc>
-    <lastmod>2024-03-07T18:38:04.000Z</lastmod>
+    <loc>https://Haly-en.github.io/BLOG/posts/Clase_Introduccion_a_Quarto/index.html</loc>
+    <lastmod>2024-01-08T21:45:18.000Z</lastmod>
   </url>
   <url>
-    <loc>https://Haly-en.github.io/BLOG/posts/welcome/index.html</loc>
-    <lastmod>2023-02-01T20:10:44.000Z</lastmod>
+    <loc>https://Haly-en.github.io/BLOG/posts/paginas_utiles_Quarto/index.html</loc>
+    <lastmod>2024-03-07T21:25:50.000Z</lastmod>
   </url>
   <url>
     <loc>https://Haly-en.github.io/BLOG/posts/post-with-code/index.html</loc>
@@ -29,16 +29,8 @@
     <lastmod>2024-01-08T21:34:18.000Z</lastmod>
   </url>
   <url>
-    <loc>https://Haly-en.github.io/BLOG/posts/Clase_intro/index.html</loc>
-    <lastmod>2024-01-08T21:45:18.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Haly-en.github.io/BLOG/posts/paginas_utiles_Quarto/index.html</loc>
-    <lastmod>2024-03-07T21:25:50.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Haly-en.github.io/BLOG/posts/comandos_utiles/index.html</loc>
-    <lastmod>2024-01-09T17:11:00.000Z</lastmod>
+    <loc>https://Haly-en.github.io/BLOG/posts/Data_visualitation/index.html</loc>
+    <lastmod>2024-03-07T18:38:04.000Z</lastmod>
   </url>
   <url>
     <loc>https://Haly-en.github.io/BLOG/index.html</loc>
