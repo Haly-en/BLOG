@@ -21,13 +21,6 @@
     "text": "Quarto\n\nParafraseando…:\n\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.\n\n\nQuarto is based on Pandoc and uses its variation of markdown as its underlying document syntax. Pandoc markdown is an extended and slightly revised version of John Gruber’s Markdown syntax and Markdown is a plain text format.\n\nMarkdown is a plain text format that is designed to be easy to write, and, even more importantly, easy to read"
   },
   {
-    "objectID": "posts/paginas_utiles_Quarto/index.html",
-    "href": "posts/paginas_utiles_Quarto/index.html",
-    "title": "Páginas útiles",
-    "section": "",
-    "text": "Blogs interesantes\n\nAquí un link para hacer un BLOG_QMD\nmine-cetinkaya-runde\n\n\n\nStickers\n\nStickers de los diferentes paquetes"
-  },
-  {
     "objectID": "posts/post-with-code/index.html",
     "href": "posts/post-with-code/index.html",
     "title": "Para presentaciones con Quarto",
@@ -133,11 +126,11 @@
     "text": "Aquí aparece en una colum"
   },
   {
-    "objectID": "posts/herramientas-R/index.html",
-    "href": "posts/herramientas-R/index.html",
-    "title": "Manipulación de datos con R",
+    "objectID": "posts/paginas_utiles_Quarto/index.html",
+    "href": "posts/paginas_utiles_Quarto/index.html",
+    "title": "Páginas útiles",
     "section": "",
-    "text": "Para asignar nombre a las columnas :\n```{r}\n\nbase_datos &lt;- text::column_to_rownames(base_datos, loc = 1)\n\n```\nPara quitar columnas que no queires de un data set\ndf &lt;- subset(df, select = -c(algo, total) )"
+    "text": "Blogs interesantes\n\nAquí un link para hacer un BLOG_QMD\nmine-cetinkaya-runde\n\n\n\nStickers\n\nStickers de los diferentes paquetes"
   },
   {
     "objectID": "posts/Data_visualitation/index.html",
@@ -158,7 +151,7 @@
     "href": "blog.html",
     "title": "Portafolio",
     "section": "",
-    "text": "Manipulación de datos con R\n\n\n\ncomandos utiles\n\n\n\n\n\n\n\nmcarrera\n\n\nMay 4, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Visualitation\n\n\n\nData Visualization\n\n\n\n\n\n\n\nMaricela Carrera\n\n\nFeb 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPara presentaciones con Quarto\n\n\n\npresentaciones\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 23, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nPáginas útiles\n\n\n\nQuarto\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClase introductoria quarto artículo\n\n\n\nQuarto_articulo\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 19, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Data Visualitation\n\n\n\nData Visualization\n\n\n\n\n\n\n\nMaricela Carrera\n\n\nFeb 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPara presentaciones con Quarto\n\n\n\npresentaciones\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 23, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nPáginas útiles\n\n\n\nQuarto\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClase introductoria quarto artículo\n\n\n\nQuarto_articulo\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 19, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Talks/R-ladies/index.html#temario",
