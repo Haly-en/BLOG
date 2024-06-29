@@ -1,18 +1,19 @@
 [
   {
-    "listing": "/talks.html",
-    "items": [
-      "/Talks/R-ladies/index.html",
-      "/Talks/Pyladies-conf/index.html"
-    ]
-  },
-  {
     "listing": "/blog.html",
     "items": [
       "/posts/Data_visualitation/index.html",
       "/posts/post-with-code/index.html",
       "/posts/paginas_utiles_Quarto/index.html",
       "/posts/Clase_Introduccion_a_Quarto/index.html"
+    ]
+  },
+  {
+    "listing": "/talks.html",
+    "items": [
+      "/Talks/R-ladies/index.html",
+      "/Talks/Pyladies-Abril/index.html",
+      "/Talks/Pyladies-conf/index.html"
     ]
   }
 ]

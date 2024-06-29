@@ -1,24 +1,52 @@
 [
   {
-    "objectID": "Talks/Pyladies-conf/index.html#presentación",
-    "href": "Talks/Pyladies-conf/index.html#presentación",
-    "title": "Talks-PyLadies Cuernavaca",
+    "objectID": "Talks/Pyladies-Abril/index.html#presentación",
+    "href": "Talks/Pyladies-Abril/index.html#presentación",
+    "title": "PyLadies Cuernavaca - Abril 12",
     "section": "Presentación",
-    "text": "Presentación\nLINK a github– Slides en PyLadies_Cuernavaca github\nRepositorio: En github mío Haly-en github"
+    "text": "Presentación\nPresentación PyLadies\nGitHub - PyLadies"
   },
   {
-    "objectID": "talks.html",
-    "href": "talks.html",
-    "title": "Talks",
+    "objectID": "Talks/R-ladies/index.html#presentación-y-recursos",
+    "href": "Talks/R-ladies/index.html#presentación-y-recursos",
+    "title": "Talks-Rladies Cuernavaca",
+    "section": "Presentación y recursos",
+    "text": "Presentación y recursos"
+  },
+  {
+    "objectID": "Talks/R-ladies/index.html#temario",
+    "href": "Talks/R-ladies/index.html#temario",
+    "title": "Talks-Rladies Cuernavaca",
+    "section": "Temario",
+    "text": "Temario\n1. Introducción a Quarto:\n\n¿Qué es Quarto? (5 minutos)\n\nDefinición de Quarto como un lenguaje de markup para la creación de documentos.\nDiferencias entre Quarto y RMarkdown.\nVentajas de usar Quarto: flexibilidad, portabilidad, multiformato.\n\n¿Qué se puede crear con Quarto? (5 minutos)\n\nMostrar ejemplos de documentos Quarto: informes, artículos, sitios web, libros, presentaciones.\nDemostrar la versatilidad de Quarto para diferentes áreas: ciencia, academia, educación, negocios.\n\n\n2. Primeros pasos con Quarto:\n\nInstalación y configuración (10 minutos)\n\nExplicar cómo instalar Quarto y RStudio.\nCrear un nuevo proyecto Quarto en RStudio.\nFamiliarizar al público con la interfaz de RStudio para Quarto.\n\nSintaxis básica de Markdown (15 minutos)\n\nIntroducir los elementos básicos de Markdown: encabezados, listas, código, imágenes, etc.\nMostrar ejemplos de código Markdown y su resultado visual.\nPracticar la escritura de Markdown en un editor de texto.\n\n\n3. Funciones avanzadas de Quarto:\n\nFormatos de salida (10 minutos)\n\nMostrar cómo generar diferentes formatos de salida a partir de un documento Quarto: HTML, PDF, EPUB, etc.\nDemostrar la configuración de opciones de salida específicas para cada formato.\n\nPlantillas y temas (10 minutos)\n\nExplicar el uso de plantillas para personalizar la apariencia de los documentos.\nMostrar cómo crear y usar temas para aplicar estilos predefinidos.\n\nChunks de código R (15 minutos)\n\nIntroducir los chunks de código R para ejecutar código dentro de un documento Quarto.\nMostrar cómo insertar gráficos, tablas y otros resultados de R en un documento.\nDemostrar la interacción entre código R y Markdown.\n\n\n4. Recursos y ejemplos:\n\nDocumentación oficial de Quarto (5 minutos)\n\nPresentar la página web oficial de Quarto como fuente de información y tutoriales.\nResaltar la disponibilidad de guías y ejemplos para diferentes casos de uso.\n\nComunidad Quarto (5 minutos)\n\nMencionar la existencia de una comunidad activa de usuarios de Quarto.\nMostrar ejemplos de proyectos Quarto creados por la comunidad.\nBrindar información sobre cómo unirse a la comunidad y obtener ayuda.\n\n\n5. Práctica y preguntas:\n\nTiempo para practicar (20 minutos)\n\nProponer un ejercicio práctico para que los participantes apliquen lo aprendido.\n\nUn reporte de semestre\nBrindar asistencia y soporte durante la práctica.\n\n\nRonda de preguntas y respuestas (15 minutos)\n\nResponder a las preguntas de los participantes sobre Quarto y su uso.\nBrindar información adicional y recomendaciones.\n\n\nCierre:\n\nResumen de los puntos clave (5 minutos)\nAgradecimiento a los participantes (2 minutos)\nInvitación a seguir aprendiendo y explorando Quarto (2 minutos)\n\nRecursos adicionales:\n\nTaller Quarto - Documento Markdown: https://rpubs.com/renzo_caceres_rossiv/markdown_quarto_001\nTaller sobre Quarto y R: https://www.youtube.com/watch?v=eilCjQu38Lg\nQuarto – diseño de documentos profesionales en RStudio: https://www.udemy.com/course/quarto-diseno-de-documentos-profesionales-en-rstudio/\nSitio web oficial de Quarto: https://quarto.org/\n\nRepositorio: En github mío Haly-en github"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Portafolio",
     "section": "",
-    "text": "Talks-Rladies\n\n\n\nTalks\n\n\n\n\n\n\n\nHaly-en\n\n\nDec 31, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTalks-PyLadies Cuernavaca\n\n\n\nTalks\n\n\n\n\n\n\n\nHaly-en\n\n\nDec 31, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Data Visualitation\n\n\n\nData Visualization\n\n\n\n\n\n\n\nMaricela Carrera\n\n\nFeb 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPara presentaciones con Quarto\n\n\n\npresentaciones\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 23, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nPáginas útiles\n\n\n\nQuarto\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClase introductoria quarto artículo\n\n\n\nQuarto_articulo\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 19, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/Clase_Introduccion_a_Quarto/index.html#quarto-1",
-    "href": "posts/Clase_Introduccion_a_Quarto/index.html#quarto-1",
-    "title": "Clase introductoria quarto artículo",
-    "section": "Quarto",
-    "text": "Quarto\n\nParafraseando…:\n\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.\n\n\nQuarto is based on Pandoc and uses its variation of markdown as its underlying document syntax. Pandoc markdown is an extended and slightly revised version of John Gruber’s Markdown syntax and Markdown is a plain text format.\n\nMarkdown is a plain text format that is designed to be easy to write, and, even more importantly, easy to read"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "☂️ Maricela Carrera",
+    "section": "",
+    "text": "I am a PhD student in the Master’s and PhD program in Biochemical Sciences at UNAM. My research primarily revolves around the investigation of bacterial regulons and the evolutionary aspects of RpoN-dependent transcriptional regulation, conducted under the guidance of Dr. Enrique Merino. Beyond my academic pursuits, I am deeply committed to fostering a collaborative learning environment. As the founder and co-organizer of the PyLadies Cuernavaca chapter, affiliated with the global PyLadies initiative (https://pyladies.com/), I am dedicated to promoting Python programming and empowering women in technology. In 2022, I was honored with a scholarship from the British Council and Inova Consultancy, which significantly contributed to my professional growth. This invaluable support enabled me to establish and lead the PyLadies chapter with enhanced confidence and effectiveness. I am currently seeking an engaging data science project within the realm of bacterial evolution research, aiming to leverage and refine my skills while contributing meaningfully to the field.\n\nI love coffee and art. ☕️\nI´am Gatolic person 🐈\n\nAquí anoto commandos útiles y utilería para presentaciones, libros, artículo… etc. Utilizando:\nQuarto\nR\nPython\nPerl"
+  },
+  {
+    "objectID": "posts/Data_visualitation/index.html",
+    "href": "posts/Data_visualitation/index.html",
+    "title": "Data Visualitation",
+    "section": "",
+    "text": "Note\n\n\n\nHere are some code For more info, text me at: maricela.carrera@ibt.unam.mx\n\n\nData from sigma54 analysis.\nPart of my project from my Ph.D in Science.\nDistribution of the sigma RpoN protein in bacterial organisms of bacterial phylogenetic groups\n\nItol tree: rRNA from 12 phyla, organisms representatives at class level.\n\nClusters of Orthologous Genes (COGs) at RpoN Regulation\n\nSome with experimental Data for representation of a plate.\nWith the package in R, ggplate\nplate_plot_384_well_plate\n\nCODE\n\nCodelibrary(ggplate)\n\n📊 Welcome to ggplate version 0.0.1! 📈\n                            \n🖍 Have fun plotting your data! 💻\n\nCodelibrary(ggplot2)\nplate_02 &lt;- read.csv(\"plate.csv\", header = TRUE,sep = \",\")\n# Create a 48-well plot with adjusted legend limits\n png(\"plate_plot_384_well_plate.png\", width = 10, height = 6, unit = \"in\", res = 300)\nplate_plot(\n  title = \"Carga de pozos\",\n  data = plate_02,\n  position = well,\n  value = Value,\n  plate_type = \"round\",\n  label = Value,\n  plate_size = 96,\n  show_legend = FALSE,\n  colour = c(\"#e11947\",\"#e35b2b\",\"#dbe930\",\"#98d339\",\"#6ec645\",\"#4cbb4d\",\"#3fae4d\",\"#3fb96b\",\"#43b3ac\",\"#5194c1\",\"#5194c1\",\"#3852a8\")\n  #colour = c('#9e0142','#d53e4f','#f46d43','#fdae61','#fee08b','#ffeda0','#ffffbf','#e6f598','#abdda4','#66c2a5','#3288bd','#5e4fa2')\n  )\ndev.off()\n\nquartz_off_screen \n                2 \n\nCodecolour = c(\"#e11947\",\"#e35b2b\",\"#dbe930\",\"#98d339\",\"#6ec645\",\"#4cbb4d\",\"#3fae4d\",\"#3fb96b\",\"#43b3ac\",\"#5194c1\",\"#5194c1\",\"#3852a8\")"
+  },
+  {
+    "objectID": "posts/paginas_utiles_Quarto/index.html",
+    "href": "posts/paginas_utiles_Quarto/index.html",
+    "title": "Páginas útiles",
+    "section": "",
+    "text": "Blogs interesantes\n\nAquí un link para hacer un BLOG_QMD\nmine-cetinkaya-runde\n\n\n\nStickers\n\nStickers de los diferentes paquetes"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -126,45 +154,31 @@
     "text": "Aquí aparece en una colum"
   },
   {
-    "objectID": "posts/paginas_utiles_Quarto/index.html",
-    "href": "posts/paginas_utiles_Quarto/index.html",
-    "title": "Páginas útiles",
+    "objectID": "posts/Clase_Introduccion_a_Quarto/index.html#quarto-1",
+    "href": "posts/Clase_Introduccion_a_Quarto/index.html#quarto-1",
+    "title": "Clase introductoria quarto artículo",
+    "section": "Quarto",
+    "text": "Quarto\n\nParafraseando…:\n\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.\n\n\nQuarto is based on Pandoc and uses its variation of markdown as its underlying document syntax. Pandoc markdown is an extended and slightly revised version of John Gruber’s Markdown syntax and Markdown is a plain text format.\n\nMarkdown is a plain text format that is designed to be easy to write, and, even more importantly, easy to read"
+  },
+  {
+    "objectID": "talks.html",
+    "href": "talks.html",
+    "title": "Talks",
     "section": "",
-    "text": "Blogs interesantes\n\nAquí un link para hacer un BLOG_QMD\nmine-cetinkaya-runde\n\n\n\nStickers\n\nStickers de los diferentes paquetes"
+    "text": "Talks-Rladies Cuernavaca\n\n\n\nTalks\n\n\n\n\n\n\n\nHaly-en\n\n\nApr 12, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPyLadies Cuernavaca - Abril 12\n\n\n\nTalks\n\n\n\n\n\n\n\nHaly-en\n\n\nApr 12, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPyLadies Introducción\n\n\n\nTalks\n\n\n\n\n\n\n\nCordinadoras PyLadies\n\n\nDec 31, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/Data_visualitation/index.html",
-    "href": "posts/Data_visualitation/index.html",
-    "title": "Data Visualitation",
+    "objectID": "Talks/Pyladies-conf/index.html",
+    "href": "Talks/Pyladies-conf/index.html",
+    "title": "PyLadies Introducción",
     "section": "",
-    "text": "Note\n\n\n\nHere are some code For more info, text me at: maricela.carrera@ibt.unam.mx\n\n\nData from sigma54 analysis.\nPart of my project from my Ph.D in Science.\nDistribution of the sigma RpoN protein in bacterial organisms of bacterial phylogenetic groups\n\nItol tree: rRNA from 12 phyla, organisms representatives at class level.\n\nClusters of Orthologous Genes (COGs) at RpoN Regulation\n\nSome with experimental Data for representation of a plate.\nWith the package in R, ggplate\nplate_plot_384_well_plate\n\nCODE\n\nCodelibrary(ggplate)\n\n📊 Welcome to ggplate version 0.0.1! 📈\n                            \n🖍 Have fun plotting your data! 💻\n\nCodelibrary(ggplot2)\nplate_02 &lt;- read.csv(\"plate.csv\", header = TRUE,sep = \",\")\n# Create a 48-well plot with adjusted legend limits\n png(\"plate_plot_384_well_plate.png\", width = 10, height = 6, unit = \"in\", res = 300)\nplate_plot(\n  title = \"Carga de pozos\",\n  data = plate_02,\n  position = well,\n  value = Value,\n  plate_type = \"round\",\n  label = Value,\n  plate_size = 96,\n  show_legend = FALSE,\n  colour = c(\"#e11947\",\"#e35b2b\",\"#dbe930\",\"#98d339\",\"#6ec645\",\"#4cbb4d\",\"#3fae4d\",\"#3fb96b\",\"#43b3ac\",\"#5194c1\",\"#5194c1\",\"#3852a8\")\n  #colour = c('#9e0142','#d53e4f','#f46d43','#fdae61','#fee08b','#ffeda0','#ffffbf','#e6f598','#abdda4','#66c2a5','#3288bd','#5e4fa2')\n  )\ndev.off()\n\nquartz_off_screen \n                2 \n\nCodecolour = c(\"#e11947\",\"#e35b2b\",\"#dbe930\",\"#98d339\",\"#6ec645\",\"#4cbb4d\",\"#3fae4d\",\"#3fb96b\",\"#43b3ac\",\"#5194c1\",\"#5194c1\",\"#3852a8\")"
+    "text": "Important\n\n\n\nEn este taller se realizó una introducción a qué es PyLadies Cuernavaca La agenda que llevaremos. Introducción a Python\n\n\n\n\nGit-Hub Pyladies Repositorio"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "☂️ Maricela Carrera",
+    "objectID": "Talks/Pyladies-conf/index.html#presentación",
+    "href": "Talks/Pyladies-conf/index.html#presentación",
+    "title": "PyLadies Introducción",
     "section": "",
-    "text": "I am a PhD student in the Master’s and PhD program in Biochemical Sciences at UNAM. My research primarily revolves around the investigation of bacterial regulons and the evolutionary aspects of RpoN-dependent transcriptional regulation, conducted under the guidance of Dr. Enrique Merino. Beyond my academic pursuits, I am deeply committed to fostering a collaborative learning environment. As the founder and co-organizer of the PyLadies Cuernavaca chapter, affiliated with the global PyLadies initiative (https://pyladies.com/), I am dedicated to promoting Python programming and empowering women in technology. In 2022, I was honored with a scholarship from the British Council and Inova Consultancy, which significantly contributed to my professional growth. This invaluable support enabled me to establish and lead the PyLadies chapter with enhanced confidence and effectiveness. I am currently seeking an engaging data science project within the realm of bacterial evolution research, aiming to leverage and refine my skills while contributing meaningfully to the field.\n\nI love coffee and art. ☕️\nI´am Gatolic person 🐈\n\nAquí anoto commandos útiles y utilería para presentaciones, libros, artículo… etc. Utilizando:\nQuarto\nR\nPython\nPerl"
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Portafolio",
-    "section": "",
-    "text": "Data Visualitation\n\n\n\nData Visualization\n\n\n\n\n\n\n\nMaricela Carrera\n\n\nFeb 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPara presentaciones con Quarto\n\n\n\npresentaciones\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 23, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nPáginas útiles\n\n\n\nQuarto\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClase introductoria quarto artículo\n\n\n\nQuarto_articulo\n\n\n\n\n\n\n\nHaly-en\n\n\nJan 19, 2023\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "Talks/R-ladies/index.html#temario",
-    "href": "Talks/R-ladies/index.html#temario",
-    "title": "Talks-Rladies",
-    "section": "Temario",
-    "text": "Temario\n1. Introducción a Quarto:\n\n¿Qué es Quarto? (5 minutos)\n\nDefinición de Quarto como un lenguaje de markup para la creación de documentos.\nDiferencias entre Quarto y RMarkdown.\nVentajas de usar Quarto: flexibilidad, portabilidad, multiformato.\n\n¿Qué se puede crear con Quarto? (5 minutos)\n\nMostrar ejemplos de documentos Quarto: informes, artículos, sitios web, libros, presentaciones.\nDemostrar la versatilidad de Quarto para diferentes áreas: ciencia, academia, educación, negocios.\n\n\n2. Primeros pasos con Quarto:\n\nInstalación y configuración (10 minutos)\n\nExplicar cómo instalar Quarto y RStudio.\nCrear un nuevo proyecto Quarto en RStudio.\nFamiliarizar al público con la interfaz de RStudio para Quarto.\n\nSintaxis básica de Markdown (15 minutos)\n\nIntroducir los elementos básicos de Markdown: encabezados, listas, código, imágenes, etc.\nMostrar ejemplos de código Markdown y su resultado visual.\nPracticar la escritura de Markdown en un editor de texto.\n\n\n3. Funciones avanzadas de Quarto:\n\nFormatos de salida (10 minutos)\n\nMostrar cómo generar diferentes formatos de salida a partir de un documento Quarto: HTML, PDF, EPUB, etc.\nDemostrar la configuración de opciones de salida específicas para cada formato.\n\nPlantillas y temas (10 minutos)\n\nExplicar el uso de plantillas para personalizar la apariencia de los documentos.\nMostrar cómo crear y usar temas para aplicar estilos predefinidos.\n\nChunks de código R (15 minutos)\n\nIntroducir los chunks de código R para ejecutar código dentro de un documento Quarto.\nMostrar cómo insertar gráficos, tablas y otros resultados de R en un documento.\nDemostrar la interacción entre código R y Markdown.\n\n\n4. Recursos y ejemplos:\n\nDocumentación oficial de Quarto (5 minutos)\n\nPresentar la página web oficial de Quarto como fuente de información y tutoriales.\nResaltar la disponibilidad de guías y ejemplos para diferentes casos de uso.\n\nComunidad Quarto (5 minutos)\n\nMencionar la existencia de una comunidad activa de usuarios de Quarto.\nMostrar ejemplos de proyectos Quarto creados por la comunidad.\nBrindar información sobre cómo unirse a la comunidad y obtener ayuda.\n\n\n5. Práctica y preguntas:\n\nTiempo para practicar (20 minutos)\n\nProponer un ejercicio práctico para que los participantes apliquen lo aprendido.\n\nUn reporte de semestre\nBrindar asistencia y soporte durante la práctica.\n\n\nRonda de preguntas y respuestas (15 minutos)\n\nResponder a las preguntas de los participantes sobre Quarto y su uso.\nBrindar información adicional y recomendaciones.\n\n\nCierre:\n\nResumen de los puntos clave (5 minutos)\nAgradecimiento a los participantes (2 minutos)\nInvitación a seguir aprendiendo y explorando Quarto (2 minutos)\n\nRecursos adicionales:\n\nTaller Quarto - Documento Markdown: https://rpubs.com/renzo_caceres_rossiv/markdown_quarto_001\nTaller sobre Quarto y R: https://www.youtube.com/watch?v=eilCjQu38Lg\nQuarto – diseño de documentos profesionales en RStudio: https://www.udemy.com/course/quarto-diseno-de-documentos-profesionales-en-rstudio/\nSitio web oficial de Quarto: https://quarto.org/"
-  },
-  {
-    "objectID": "Talks/R-ladies/index.html#presentación",
-    "href": "Talks/R-ladies/index.html#presentación",
-    "title": "Talks-Rladies",
-    "section": "Presentación",
-    "text": "Presentación\nLINK a github– Slides en Rladies github\nRepositorio: En github mío Haly-en github"
+    "text": "Git-Hub Pyladies Repositorio"
   }
 ]
